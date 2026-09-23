@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Haritha Haridas - 2D character animator based in Kochi, Kerala. Puppet, classical and semi-realistic animation in Toon Boom Harmony and Adobe Animate.">
+<meta property="og:title" content="Haritha Haridas - 2D Animator">
+<meta property="og:description" content="2D character animator. Showreel, shot breakdown and five years of studio credits.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://harithaharidas.in/">
+<meta property="og:site_name" content="Haritha Haridas">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://harithaharidas.in/">
+<title>Haritha Haridas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#E8E9EC; --surface:#F5F6F8; --surface-2:#DCDEE4;
+  --ink:#14161D; --ink-2:#474C59; --ink-3:#757B8A;
+  --rule:#C6C9D1;
+  --accent:#0E7C6B; --accent-soft:rgba(14,124,107,.12);
+  --warm:#BC4127; --warm-soft:rgba(188,65,39,.10);
+  --shadow:0 1px 2px rgba(20,22,29,.06);
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0F1118; --surface:#161922; --surface-2:#1E222D;
+    --ink:#ECEFF4; --ink-2:#A6ACBB; --ink-3:#737A8A;
+    --rule:#282D39;
+    --accent:#3FD1B4; --accent-soft:rgba(63,209,180,.14);
+    --warm:#FF7C5E; --warm-soft:rgba(255,124,94,.12);
+    --shadow:0 1px 2px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0F1118; --surface:#161922; --surface-2:#1E222D;
+  --ink:#ECEFF4; --ink-2:#A6ACBB; --ink-3:#737A8A;
+  --rule:#282D39;
+  --accent:#3FD1B4; --accent-soft:rgba(63,209,180,.14);
+  --warm:#FF7C5E; --warm-soft:rgba(255,124,94,.12);
+  --shadow:0 1px 2px rgba(0,0,0,.4);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--body); font-size:16px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1000px; margin:0 auto; padding-inline:24px;}
+@media (max-width:480px){ .wrap{padding-inline:16px} }
+
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+
+/* ---------- mono utility rail ---------- */
+.rail{
+  font-family:var(--mono); font-size:11px; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--ink-3);
+}
+
+/* ---------- top bar ---------- */
+.topbar{
+  border-bottom:1px solid var(--rule);
+  position:sticky; top:env(safe-area-inset-top,0px); z-index:20;
+  background:color-mix(in srgb, var(--ground) 88%, transparent);
+  backdrop-filter:blur(10px);
+}
+.topbar .wrap{
+  display:flex; flex-wrap:wrap; gap:10px 20px;
+  align-items:baseline; justify-content:space-between;
+  padding-block:12px;
+}
+.topbar .mark{
+  font-family:var(--mono); font-size:11px; font-weight:600;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink);
+}
+.topbar nav{display:flex; gap:18px; flex-wrap:wrap}
+.topbar nav a{
+  font-family:var(--mono); font-size:11px; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--ink-3); text-decoration:none;
+}
+.topbar nav a:hover{color:var(--accent)}
+
+/* ---------- hero ---------- */
+.hero{padding-block:52px 34px}
+.hero .meta{display:flex; gap:8px 16px; flex-wrap:wrap; margin-bottom:18px}
+.hero .meta span{display:inline-flex; gap:8px; align-items:center}
+.hero .meta span::before{
+  content:""; width:5px; height:5px; border-radius:50%;
+  background:var(--accent); display:inline-block;
+}
+h1{
+  font-family:var(--display);
+  font-variation-settings:"wdth" 118,"wght" 800;
+  font-size:clamp(2.6rem,9vw,5.1rem);
+  line-height:.94; letter-spacing:-.02em;
+  margin:0 0 20px; text-wrap:balance; text-transform:uppercase;
+}
+.lede{
+  font-size:clamp(1.05rem,2.2vw,1.3rem); line-height:1.5;
+  color:var(--ink-2); max-width:56ch; margin:0;
+}
+.lede strong{color:var(--ink); font-weight:600}
+
+/* ---------- reel ---------- */
+.reel{padding-block:8px 44px}
+.reel-frame{
+  position:relative; aspect-ratio:16/9; max-width:100%;
+  background:#000; border:1px solid var(--rule);
+  overflow:hidden; box-shadow:var(--shadow);
+}
+.reel-frame iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+.reel-strip{
+  display:flex; flex-wrap:wrap; gap:6px 22px;
+  padding-block:11px; border-bottom:1px solid var(--rule);
+}
+.reel-strip .tick{color:var(--accent)}
+.reel-fallback{
+  font-family:var(--mono); font-size:12px; color:var(--ink-3);
+  padding-top:10px;
+}
+.reel-fallback a{color:var(--accent); text-underline-offset:3px}
+
+/* ---------- section scaffolding ---------- */
+section{padding-block:44px; border-top:1px solid var(--rule)}
+section:first-of-type{border-top:0}
+.sec-head{display:flex; align-items:baseline; gap:14px; margin-bottom:26px; flex-wrap:wrap}
+.sec-head h2{
+  font-family:var(--display);
+  font-variation-settings:"wdth" 112,"wght" 700;
+  font-size:1.5rem; letter-spacing:-.005em; text-transform:uppercase;
+  margin:0;
+}
+.sec-head .note{color:var(--ink-3); font-size:.875rem}
+
+/* ---------- x-sheet ---------- */
+.xsheet{border-top:1px solid var(--rule)}
+.xrow{
+  display:grid;
+  grid-template-columns:52px minmax(0,1.55fr) minmax(0,1.15fr) minmax(0,.95fr);
+  gap:4px 18px;
+  padding-block:16px; border-bottom:1px solid var(--rule);
+  position:relative;
+}
+.xrow::before{
+  content:""; position:absolute; left:-12px; right:-12px; top:0; bottom:0;
+  background:var(--accent-soft); opacity:0; pointer-events:none;
+  transition:opacity .18s ease;
+}
+.xrow:hover::before{opacity:1}
+.xnum{
+  font-family:var(--mono); font-size:12px; font-weight:500;
+  color:var(--warm); letter-spacing:.04em; padding-top:3px;
+  font-variant-numeric:tabular-nums;
+}
+.xtitle{font-weight:600; line-height:1.35; min-width:0}
+.xtitle .sub{
+  display:block; font-weight:400; font-size:.875rem;
+  color:var(--ink-3); margin-top:3px;
+}
+.xrole{font-size:.9rem; color:var(--ink-2); min-width:0}
+.xmeta{
+  font-family:var(--mono); font-size:11px; letter-spacing:.05em;
+  color:var(--ink-3); text-transform:uppercase; min-width:0;
+  padding-top:3px;
+}
+@media (max-width:720px){
+  .xrow{grid-template-columns:44px minmax(0,1fr)}
+  .xrole,.xmeta{grid-column:2}
+  .xrole{margin-top:2px}
+}
+
+/* ---------- experience ---------- */
+.jobs{display:grid; gap:0; border-top:1px solid var(--rule)}
+.job{
+  display:grid; grid-template-columns:150px minmax(0,1fr); gap:6px 24px;
+  padding-block:20px; border-bottom:1px solid var(--rule);
+}
+.job .when{
+  font-family:var(--mono); font-size:11px; letter-spacing:.06em;
+  color:var(--ink-3); text-transform:uppercase; padding-top:4px;
+  font-variant-numeric:tabular-nums;
+}
+.job h3{
+  font-family:var(--body); font-size:1.02rem; font-weight:600;
+  margin:0 0 2px;
+}
+.job .org{color:var(--accent); font-size:.9rem; font-weight:500; margin:0 0 8px}
+.job p.did{margin:0; color:var(--ink-2); font-size:.94rem}
+@media (max-width:620px){ .job{grid-template-columns:1fr} .job .when{padding-top:0} }
+
+/* ---------- toolkit ---------- */
+.cols{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:30px}
+.chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; padding:0; list-style:none}
+.chips li{
+  font-family:var(--mono); font-size:11px; letter-spacing:.06em;
+  text-transform:uppercase; padding:6px 11px;
+  border:1px solid var(--rule); color:var(--ink-2); background:var(--surface);
+}
+.chips.primary li{border-color:var(--accent); color:var(--accent); background:var(--accent-soft)}
+
+/* ---------- contact ---------- */
+.contact{padding-block:44px 64px; border-top:1px solid var(--rule)}
+.contact h2{
+  font-family:var(--display); font-variation-settings:"wdth" 118,"wght" 800;
+  font-size:clamp(1.9rem,6vw,3rem); text-transform:uppercase;
+  line-height:1; margin:0 0 22px; letter-spacing:-.015em;
+}
+.links{display:flex; flex-wrap:wrap; gap:10px}
+.links a{
+  display:inline-flex; align-items:center; gap:9px;
+  font-family:var(--mono); font-size:12px; letter-spacing:.06em;
+  text-transform:uppercase; text-decoration:none;
+  padding:11px 16px; border:1px solid var(--rule);
+  background:var(--surface); color:var(--ink);
+  transition:border-color .16s ease, color .16s ease, background .16s ease;
+}
+.links a:hover{border-color:var(--accent); color:var(--accent); background:var(--accent-soft)}
+.links a.key{border-color:var(--ink); background:var(--ink); color:var(--ground)}
+.links a.key:hover{background:var(--accent); border-color:var(--accent); color:#fff}
+.colophon{
+  margin-top:34px; padding-top:16px; border-top:1px solid var(--rule);
+  display:flex; justify-content:space-between; gap:12px 20px; flex-wrap:wrap;
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important; animation:none!important}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <span class="mark">Haritha Haridas</span>
+    <nav>
+      <a href="#reel">Reel</a>
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="hero">
+      <div class="meta rail">
+        <span>2D Animator</span>
+        <span>Kochi, Kerala</span>
+        <span>5 years in studio</span>
+      </div>
+      <h1>Haritha<br>Haridas</h1>
+      <p class="lede">
+        Character animator working in <strong>puppet, classical and semi-realistic 2D</strong> —
+        from key poses and storyboards through to final clean-up. Five years across
+        YouTube series, music video and pre-production work in Toon Boom Harmony and Adobe Animate.
+      </p>
+    </div>
+
+    <section id="reel" class="reel" style="border-top:0;padding-top:0">
+      <div class="reel-strip rail">
+        <span class="tick">▸ Showreel 2026</span>
+        <span>Runtime 01:44</span>
+        <span>Toon Boom Harmony · Adobe Animate · Photoshop</span>
+      </div>
+      <div class="reel-frame">
+        <iframe
+          src="https://player.vimeo.com/video/1228117721?title=0&amp;byline=0&amp;portrait=0"
+          title="Haritha Haridas — 2D Animation Showreel"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+          loading="lazy"></iframe>
+      </div>
+      <p class="reel-fallback">
+        Player not loading? <a href="https://vimeo.com/1228117721" target="_blank" rel="noopener">Watch the reel on Vimeo →</a>
+      </p>
+    </section>
+
+    <section id="work">
+      <div class="sec-head">
+        <h2>Shot breakdown</h2>
+        <span class="note">What I animated, and on what.</span>
+      </div>
+      <div class="xsheet">
+
+        <div class="xrow">
+          <div class="xnum">00</div>
+          <div class="xtitle">2D Animation Showreel
+            <span class="sub">Compilation cut — 1 min 44 sec</span>
+          </div>
+          <div class="xrole">Animation, selection and edit</div>
+          <div class="xmeta">2026</div>
+        </div>
+
+        <div class="xrow">
+          <div class="xnum">01</div>
+          <div class="xtitle">MSA
+            <span class="sub">YouTube animated series</span>
+          </div>
+          <div class="xrole">Puppet-based character animation, key poses; worked to BG artist's plates</div>
+          <div class="xmeta">ZVoid · Toon Boom</div>
+        </div>
+
+        <div class="xrow">
+          <div class="xnum">02</div>
+          <div class="xtitle">Naxon — “Stories For Men” &amp; “Artul”
+            <span class="sub">Money-story shorts for YouTube</span>
+          </div>
+          <div class="xrole">Chibi, comic and anime-style character animation</div>
+          <div class="xmeta">ZVoid · Animate</div>
+        </div>
+
+        <div class="xrow">
+          <div class="xnum">03</div>
+          <div class="xtitle">Lupin's Tale
+            <span class="sub">YouTube animated series</span>
+          </div>
+          <div class="xrole">Character animation across multiple episodes</div>
+          <div class="xmeta">Motion PhilmCGI</div>
+        </div>
+
+        <div class="xrow">
+          <div class="xnum">04</div>
+          <div class="xtitle">“Something to Lose” — KBIR
+            <span class="sub">Music video</span>
+          </div>
+          <div class="xrole">Animation and pre-production</div>
+          <div class="xmeta">Motion PhilmCGI</div>
+        </div>
+
+        <div class="xrow">
+          <div class="xnum">05</div>
+          <div class="xtitle">Semi-realistic animation project
+            <span class="sub">Puppet and classical passes</span>
+          </div>
+          <div class="xrole">Animation, character study, storyboarding, pre-production</div>
+          <div class="xmeta">Motion PhilmCGI</div>
+        </div>
+
+        <div class="xrow">
+          <div class="xnum">06</div>
+          <div class="xtitle">Prop &amp; staging design
+            <span class="sub">Series production</span>
+          </div>
+          <div class="xrole">2D prop design, tracing and colouring rough props from animatic</div>
+          <div class="xmeta">Phoebus Creation · 2019</div>
+        </div>
+
+        <div class="xrow">
+          <div class="xnum">07</div>
+          <div class="xtitle">Personal work &amp; studies
+            <span class="sub">Ongoing</span>
+          </div>
+          <div class="xrole">Perspective drawing, dynamic poses, short loops</div>
+          <div class="xmeta">Ongoing</div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="sec-head">
+        <h2>Experience</h2>
+        <span class="note">Nov 2020 — present.</span>
+      </div>
+      <div class="jobs">
+
+        <div class="job">
+          <div class="when">Feb 2024 — Jan 2026</div>
+          <div>
+            <h3>2D Animation Assistant</h3>
+            <p class="org">ZVoid Studios · Kerala</p>
+            <p class="did">Puppet-based animation for the MSA YouTube series and the Naxon channel.
+            Built key poses and final animation across chibi, comic and anime styles in Toon Boom
+            Harmony, Adobe Animate and Photoshop, working closely with the background artist and
+            turning lead feedback into shot-level fixes.</p>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="when">Nov 2020 — Jan 2024</div>
+          <div>
+            <h3>Junior Animator → Animator</h3>
+            <p class="org">Motion PhilmCGI · Maharashtra</p>
+            <p class="did">Semi-realistic, puppet and classical animation. Storyboarding, character
+            study and pre-production alongside production animation on Lupin's Tale and the KBIR
+            music video. Ran several projects in parallel to deadline and contributed ideas in
+            brainstorming that made it into the final work.</p>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="when">Jun — Aug 2019</div>
+          <div>
+            <h3>Prop &amp; Staging Intern</h3>
+            <p class="org">Phoebus Creation Media · Maharashtra</p>
+            <p class="did">Created and maintained 2D prop designs for a series; traced and coloured
+            rough props from the animatic and sat in on storyboarding sessions.</p>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="when">2017 — 2020</div>
+          <div>
+            <h3>BSc Animation &amp; Gaming</h3>
+            <p class="org">Bharati Vidyapeeth Deemed University</p>
+            <p class="did">Graduated with 9.32 CGPA.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="toolkit">
+      <div class="sec-head">
+        <h2>Toolkit</h2>
+      </div>
+      <div class="cols">
+        <div>
+          <span class="rail">Software</span>
+          <ul class="chips primary">
+            <li>Toon Boom Harmony</li>
+            <li>Adobe Animate</li>
+            <li>Adobe Photoshop</li>
+            <li>Blender (2D)</li>
+            <li>Krita</li>
+          </ul>
+        </div>
+        <div>
+          <span class="rail">Craft</span>
+          <ul class="chips">
+            <li>Puppet animation</li>
+            <li>Classical animation</li>
+            <li>Key poses</li>
+            <li>Storyboarding</li>
+            <li>Character study</li>
+            <li>Pre-production</li>
+            <li>Prop design</li>
+            <li>Perspective drawing</li>
+            <li>Dynamic poses</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="wrap">
+    <section id="contact" class="contact" style="padding-block:44px 64px">
+      <h2>Open to work</h2>
+      <p class="lede" style="margin-bottom:26px">
+        Available for 2D character animation — series, shorts and music video.
+        Remote or Kochi-based.
+      </p>
+      <div class="links">
+        <a class="key" href="mailto:haritha.hari4899@gmail.com">Email me</a>
+        <a href="https://vimeo.com/1228117721" target="_blank" rel="noopener">Vimeo</a>
+        <a href="https://www.instagram.com/haritha_harry04" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://drive.google.com/drive/folders/1HD-Uuz3CvH2GQ3y7Pkzza6Z3K6LUwxV0" target="_blank" rel="noopener">Résumé (PDF)</a>
+      </div>
+      <div class="colophon rail">
+        <span>Haritha Haridas — 2D Animator</span>
+        <span>Kochi, Kerala, India</span>
+      </div>
+    </section>
+  </div>
+</main>
+
+</body>
+</html>

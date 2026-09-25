@@ -1,477 +1,1224 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Haritha Haridas - 2D character animator based in Kochi, Kerala. Puppet, classical and semi-realistic animation in Toon Boom Harmony and Adobe Animate.">
-<meta property="og:title" content="Haritha Haridas - 2D Animator">
-<meta property="og:description" content="2D character animator. Showreel, shot breakdown and five years of studio credits.">
+<title>Haritha Haridas — 2D Animator</title>
+<meta name="description" content="Haritha Haridas — 2D character animator in Kochi, Kerala. Five years of studio work in puppet, classical and painted frame-by-frame animation. Toon Boom Harmony, Adobe Animate, Photoshop.">
+<meta property="og:title" content="Haritha Haridas — 2D Animator">
+<meta property="og:description" content="Showreel, shot breakdowns, process and artwork from five years of 2D studio animation.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://harithaharidas.in/">
-<meta property="og:site_name" content="Haritha Haridas">
+<meta property="og:image" content="https://drive.google.com/thumbnail?id=1CHj_9XIzFCDTxVNRZ48zz5HnDczRBB7I&sz=w1200">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0B0D12">
 <link rel="canonical" href="https://harithaharidas.in/">
-<title>Haritha Haridas</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B0D12'/%3E%3Ccircle cx='27' cy='34' r='14' fill='%233FD1B4' opacity='.55'/%3E%3Ccircle cx='37' cy='30' r='14' fill='%23FF7C5E' opacity='.8'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem('hh-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="preconnect" href="https://drive.google.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,100..125,400..900;1,100..125,400..900&family=Caveat:wght@500;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <style>
 :root{
-  --ground:#E8E9EC; --surface:#F5F6F8; --surface-2:#DCDEE4;
-  --ink:#14161D; --ink-2:#474C59; --ink-3:#757B8A;
-  --rule:#C6C9D1;
-  --accent:#0E7C6B; --accent-soft:rgba(14,124,107,.12);
-  --warm:#BC4127; --warm-soft:rgba(188,65,39,.10);
-  --shadow:0 1px 2px rgba(20,22,29,.06);
+  --ground:#0B0D12; --surface:#12151C; --surface-2:#1A1E28;
+  --ink:#ECEFF4; --ink-2:#A6ACBB; --ink-3:#6E7585;
+  --rule:#232834;
+  --accent:#3FD1B4; --accent-soft:rgba(63,209,180,.14);
+  --warm:#FF7C5E; --warm-soft:rgba(255,124,94,.14);
+  --blend:screen;
   --display:"Archivo","Helvetica Neue",Arial,sans-serif;
   --body:"IBM Plex Sans","Segoe UI",Helvetica,Arial,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --ease:cubic-bezier(.2,.7,.1,1);
+  --pad:clamp(16px,4vw,48px);
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --ground:#0F1118; --surface:#161922; --surface-2:#1E222D;
-    --ink:#ECEFF4; --ink-2:#A6ACBB; --ink-3:#737A8A;
-    --rule:#282D39;
-    --accent:#3FD1B4; --accent-soft:rgba(63,209,180,.14);
-    --warm:#FF7C5E; --warm-soft:rgba(255,124,94,.12);
-    --shadow:0 1px 2px rgba(0,0,0,.4);
-  }
+:root[data-theme="light"]{
+  --ground:#ECEDF0; --surface:#F7F8FA; --surface-2:#DFE1E7;
+  --ink:#12141B; --ink-2:#444A57; --ink-3:#737A89;
+  --rule:#C9CCD4;
+  --accent:#0E7C6B; --accent-soft:rgba(14,124,107,.12);
+  --warm:#C4462B; --warm-soft:rgba(196,70,43,.10);
+  --blend:multiply;
 }
-:root[data-theme="dark"]{
-  --ground:#0F1118; --surface:#161922; --surface-2:#1E222D;
-  --ink:#ECEFF4; --ink-2:#A6ACBB; --ink-3:#737A8A;
-  --rule:#282D39;
-  --accent:#3FD1B4; --accent-soft:rgba(63,209,180,.14);
-  --warm:#FF7C5E; --warm-soft:rgba(255,124,94,.12);
-  --shadow:0 1px 2px rgba(0,0,0,.4);
-}
-
 *{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:72px}
 body{
   margin:0; background:var(--ground); color:var(--ink);
   font-family:var(--body); font-size:16px; line-height:1.6;
-  -webkit-font-smoothing:antialiased;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  transition:background .4s ease, color .4s ease;
 }
-.wrap{max-width:1000px; margin:0 auto; padding-inline:24px;}
-@media (max-width:480px){ .wrap{padding-inline:16px} }
-
+img{display:block; max-width:100%}
 a{color:inherit}
-a:focus-visible,button:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+button{font:inherit; color:inherit; cursor:pointer}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+::selection{background:var(--accent); color:var(--ground)}
+.wrap{max-width:1280px; margin:0 auto; padding-inline:var(--pad)}
+.mono{font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase}
+.sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0)}
 
-/* ---------- mono utility rail ---------- */
-.rail{
-  font-family:var(--mono); font-size:11px; letter-spacing:.09em;
-  text-transform:uppercase; color:var(--ink-3);
+/* ================= loader: bouncing-ball exercise ================= */
+#loader{
+  position:fixed; inset:0; z-index:100; background:var(--ground);
+  display:grid; place-items:center;
+  transition:clip-path .8s var(--ease);
+  clip-path:inset(0 0 0 0);
+  animation:loaderFailsafe 0s linear 4s forwards;
+}
+#loader.done{clip-path:inset(0 0 100% 0)}
+@keyframes loaderFailsafe{to{visibility:hidden}}
+.ld{width:min(340px,80vw)}
+.ld-stage{position:relative; height:140px; border-bottom:1px solid var(--rule)}
+.ld-x{position:absolute; left:0; bottom:0; animation:ldX 1.3s linear forwards}
+.ld-y{animation:ldY .43s cubic-bezier(.3,0,.7,1) infinite alternate}
+.ld-ball{
+  width:26px; height:26px; border-radius:50%; background:var(--warm);
+  box-shadow:-10px 4px 0 -2px var(--accent-soft), -20px 8px 0 -5px var(--accent-soft);
+  transform-origin:50% 100%; animation:ldSquash .43s linear infinite alternate;
+}
+@keyframes ldX{from{transform:translateX(0)}to{transform:translateX(calc(min(340px,80vw) - 26px))}}
+@keyframes ldY{from{transform:translateY(0)}to{transform:translateY(-110px)}}
+@keyframes ldSquash{0%{transform:scale(1.35,.7)}12%{transform:scale(.85,1.2)}60%,100%{transform:scale(1,1)}}
+.ld-meta{display:flex; justify-content:space-between; margin-top:12px; color:var(--ink-3)}
+.ld-meta b{color:var(--accent); font-weight:500}
+
+/* ================= header ================= */
+.hdr{
+  position:fixed; inset:0 0 auto 0; z-index:50;
+  transition:background .3s ease, border-color .3s ease, transform .4s var(--ease);
+  border-bottom:1px solid transparent;
+}
+.hdr.scrolled{
+  background:color-mix(in srgb, var(--ground) 82%, transparent);
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  border-color:var(--rule);
+}
+.hdr .wrap{display:flex; align-items:center; gap:24px; height:64px}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none; font-weight:600; letter-spacing:.02em; white-space:nowrap}
+.brand-mark{position:relative; width:26px; height:26px}
+.brand-mark i{position:absolute; inset:0; border-radius:50%}
+.brand-mark i:first-child{background:var(--accent); opacity:.55; transform:translateX(-4px)}
+.brand-mark i:last-child{background:var(--warm); mix-blend-mode:var(--blend); transform:translateX(4px)}
+.brand:hover .brand-mark i:first-child{animation:boilA .5s steps(1) infinite}
+.nav{display:flex; gap:22px; margin-left:auto}
+.nav a{
+  text-decoration:none; color:var(--ink-2); position:relative; padding-block:6px;
+  transition:color .2s ease;
+}
+.nav a::after{
+  content:""; position:absolute; left:0; right:0; bottom:0; height:2px; background:var(--accent);
+  transform:scaleX(0); transform-origin:left; transition:transform .35s var(--ease);
+}
+.nav a:hover,.nav a.active{color:var(--ink)}
+.nav a.active::after,.nav a:hover::after{transform:scaleX(1)}
+.hdr-tools{display:flex; align-items:center; gap:10px}
+.tc{color:var(--ink-3); font-variant-numeric:tabular-nums; min-width:92px; text-align:right}
+.tc b{color:var(--warm); font-weight:500}
+.icon-btn{
+  width:36px; height:36px; display:grid; place-items:center; border-radius:50%;
+  border:1px solid var(--rule); background:transparent; transition:border-color .2s, background .2s;
+}
+.icon-btn:hover{border-color:var(--accent); background:var(--accent-soft)}
+.icon-btn svg{width:16px; height:16px}
+.btn{
+  display:inline-flex; align-items:center; gap:10px; text-decoration:none;
+  padding:12px 20px; border-radius:999px; border:1px solid var(--rule);
+  font-family:var(--mono); font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+  background:var(--surface); position:relative; transition:transform .25s var(--ease), border-color .2s, background .2s, color .2s;
+}
+.btn:hover{border-color:var(--accent); transform:translateY(-2px)}
+.btn.key{background:var(--ink); color:var(--ground); border-color:var(--ink)}
+.btn.key:hover{background:var(--accent); border-color:var(--accent); color:#06120F}
+.btn.sm{padding:8px 14px; font-size:11px}
+.menu-btn{display:none}
+.progress{position:absolute; left:0; bottom:-1px; height:2px; width:100%; background:var(--warm); transform-origin:left; transform:scaleX(0)}
+@media (max-width:1060px){ .tc{display:none} }
+@media (max-width:900px){
+  .menu-btn{display:grid}
+  .hdr .hire{display:none}
+  .nav{
+    position:fixed; inset:64px 0 auto 0; flex-direction:column; gap:0; margin:0;
+    background:var(--ground); border-bottom:1px solid var(--rule); padding:8px var(--pad) 20px;
+    transform:translateY(-12px); opacity:0; pointer-events:none; transition:opacity .25s, transform .3s var(--ease);
+  }
+  .nav a{font-size:13px; padding-block:14px; border-bottom:1px solid var(--rule)}
+  .nav a::after{display:none}
+  .hdr.open .nav{opacity:1; transform:none; pointer-events:auto}
+  .hdr.open{background:var(--ground); border-color:var(--rule)}
+  .hdr-tools{margin-left:auto}
 }
 
-/* ---------- top bar ---------- */
-.topbar{
-  border-bottom:1px solid var(--rule);
-  position:sticky; top:env(safe-area-inset-top,0px); z-index:20;
-  background:color-mix(in srgb, var(--ground) 88%, transparent);
-  backdrop-filter:blur(10px);
+/* ================= hero ================= */
+.hero{position:relative; min-height:100svh; display:flex; align-items:flex-end; overflow:hidden; padding-block:120px 64px}
+.strips{
+  position:absolute; inset:-10% -10%; display:flex; flex-direction:column; gap:18px; justify-content:center;
+  transform:rotate(-7deg) scale(1.05); opacity:.42; pointer-events:none;
 }
-.topbar .wrap{
-  display:flex; flex-wrap:wrap; gap:10px 20px;
-  align-items:baseline; justify-content:space-between;
-  padding-block:12px;
+.strips::after{
+  content:""; position:absolute; inset:0;
+  background:
+    linear-gradient(90deg, var(--ground) 0%, transparent 25%, transparent 75%, var(--ground) 100%),
+    linear-gradient(0deg, var(--ground) 18%, color-mix(in srgb,var(--ground) 55%,transparent) 50%, color-mix(in srgb,var(--ground) 60%,transparent) 100%);
 }
-.topbar .mark{
-  font-family:var(--mono); font-size:11px; font-weight:600;
-  letter-spacing:.14em; text-transform:uppercase; color:var(--ink);
+.status span{background:color-mix(in srgb,var(--ground) 70%,transparent); padding:4px 10px 4px 8px; border-radius:999px; backdrop-filter:blur(6px)}
+.strip{
+  display:flex; width:max-content; gap:0; padding-block:14px;
+  background:
+    repeating-linear-gradient(90deg, #000 0 6px, transparent 6px 20px) top/100% 8px no-repeat,
+    repeating-linear-gradient(90deg, #000 0 6px, transparent 6px 20px) bottom/100% 8px no-repeat,
+    #050608;
+  animation:marquee var(--dur,90s) linear infinite;
 }
-.topbar nav{display:flex; gap:18px; flex-wrap:wrap}
-.topbar nav a{
-  font-family:var(--mono); font-size:11px; letter-spacing:.09em;
-  text-transform:uppercase; color:var(--ink-3); text-decoration:none;
+.strip.rev{animation-direction:reverse}
+.strip img{
+  width:clamp(220px,24vw,340px); aspect-ratio:16/9; object-fit:cover; margin-inline:5px;
+  background:#111; filter:saturate(.9);
 }
-.topbar nav a:hover{color:var(--accent)}
+.strip::before,.strip::after{content:none}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* ---------- hero ---------- */
-.hero{padding-block:52px 34px}
-.hero .meta{display:flex; gap:8px 16px; flex-wrap:wrap; margin-bottom:18px}
-.hero .meta span{display:inline-flex; gap:8px; align-items:center}
-.hero .meta span::before{
-  content:""; width:5px; height:5px; border-radius:50%;
-  background:var(--accent); display:inline-block;
+.hero-in{position:relative; z-index:2; width:100%}
+.status{display:flex; flex-wrap:wrap; gap:8px 22px; color:var(--ink-2); margin-bottom:22px}
+.status span{display:inline-flex; align-items:center; gap:8px}
+.dot{width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 0 var(--accent); animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(63,209,180,.6)}80%,100%{box-shadow:0 0 0 10px rgba(63,209,180,0)}}
+
+.name{
+  font-family:var(--display); font-variation-settings:"wdth" 125,"wght" 850;
+  font-size:clamp(3.2rem,13.5vw,12.5rem); line-height:.84; letter-spacing:-.035em;
+  text-transform:uppercase; margin:0 0 28px;
 }
-h1{
-  font-family:var(--display);
-  font-variation-settings:"wdth" 118,"wght" 800;
-  font-size:clamp(2.6rem,9vw,5.1rem);
-  line-height:.94; letter-spacing:-.02em;
-  margin:0 0 20px; text-wrap:balance; text-transform:uppercase;
+.name .ln{display:block; position:relative; width:max-content; max-width:100%}
+.name .ln > span{display:block; position:relative; z-index:2}
+.name .ln::before,.name .ln::after{
+  content:attr(data-text); position:absolute; inset:0; z-index:1; pointer-events:none;
+  mix-blend-mode:var(--blend);
 }
-.lede{
-  font-size:clamp(1.05rem,2.2vw,1.3rem); line-height:1.5;
-  color:var(--ink-2); max-width:56ch; margin:0;
-}
+.name .ln::before{color:var(--accent); opacity:.6; animation:ghostInA 1.1s steps(9) both, boilA 1.5s steps(1) 1.4s infinite}
+.name .ln::after{color:var(--warm); opacity:.7; animation:ghostInB 1.1s steps(9) both, boilB 1.5s steps(1) 1.4s infinite}
+.name .ln:nth-child(2)::before,.name .ln:nth-child(2)::after{animation-delay:.12s, 1.55s}
+.name .ln > span{animation:inkIn .9s steps(6) both}
+.name .ln:nth-child(2) > span{animation-delay:.12s}
+@keyframes inkIn{from{opacity:0; transform:translateY(.2em)}to{opacity:1; transform:none}}
+@keyframes ghostInA{from{transform:translate(-.5em,.08em); opacity:0}to{transform:translate(-.045em,0)}}
+@keyframes ghostInB{from{transform:translate(.5em,-.08em); opacity:0}to{transform:translate(.045em,0)}}
+@keyframes boilA{0%{transform:translate(-.045em,0)}33%{transform:translate(-.05em,.008em)}66%{transform:translate(-.04em,-.006em)}}
+@keyframes boilB{0%{transform:translate(.045em,0)}33%{transform:translate(.04em,-.008em)}66%{transform:translate(.052em,.006em)}}
+
+.hero-row{display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:28px}
+.lede{font-size:clamp(1.05rem,1.8vw,1.35rem); line-height:1.5; color:var(--ink-2); max-width:44ch; margin:0}
 .lede strong{color:var(--ink); font-weight:600}
+.ctas{display:flex; flex-wrap:wrap; gap:10px}
+.play-ico{width:18px; height:18px; border-radius:50%; background:var(--warm); display:grid; place-items:center}
+.play-ico::after{content:""; border-left:6px solid #fff; border-block:4px solid transparent; margin-left:2px}
+.scroll-cue{position:absolute; right:var(--pad); bottom:24px; z-index:2; color:var(--ink-3); display:flex; align-items:center; gap:10px}
+.scroll-cue i{width:1px; height:36px; background:var(--rule); position:relative; overflow:hidden}
+.scroll-cue i::after{content:""; position:absolute; inset:0; background:var(--accent); animation:cue 1.8s var(--ease) infinite}
+@keyframes cue{from{transform:translateY(-100%)}to{transform:translateY(100%)}}
+@media (max-width:640px){ .scroll-cue{display:none} .hero{padding-bottom:40px} }
 
-/* ---------- reel ---------- */
-.reel{padding-block:8px 44px}
+/* ================= sections ================= */
+section{position:relative; padding-block:clamp(72px,11vw,140px)}
+.sec-head{display:grid; grid-template-columns:auto 1fr; gap:6px 24px; align-items:end; margin-bottom:clamp(36px,5vw,64px)}
+.sec-num{font-family:var(--mono); font-size:12px; color:var(--warm); letter-spacing:.1em; grid-row:span 2; align-self:start; padding-top:.9em}
+.sec-head h2{
+  font-family:var(--display); font-variation-settings:"wdth" 120,"wght" 800;
+  font-size:clamp(2.2rem,6.5vw,5.2rem); line-height:.9; letter-spacing:-.03em;
+  text-transform:uppercase; margin:0;
+}
+.sec-head p{margin:0; color:var(--ink-2); max-width:56ch}
+.rule-top{border-top:1px solid var(--rule)}
+
+/* reveal */
+[data-reveal]{opacity:0; transform:translateY(34px); transition:opacity .9s var(--ease), transform .9s var(--ease); transition-delay:var(--d,0s)}
+[data-reveal].in{opacity:1; transform:none}
+.split .w{display:inline-block; overflow:hidden; vertical-align:top}
+.split .w > span{display:inline-block; transform:translateY(105%); transition:transform .9s var(--ease); transition-delay:calc(var(--i) * 45ms)}
+.split.in .w > span{transform:none}
+
+/* ================= reel ================= */
 .reel-frame{
-  position:relative; aspect-ratio:16/9; max-width:100%;
-  background:#000; border:1px solid var(--rule);
-  overflow:hidden; box-shadow:var(--shadow);
+  position:relative; aspect-ratio:16/9; background:#000; overflow:hidden; border-radius:14px;
+  border:1px solid var(--rule);
 }
 .reel-frame iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
-.reel-strip{
-  display:flex; flex-wrap:wrap; gap:6px 22px;
-  padding-block:11px; border-bottom:1px solid var(--rule);
+.reel-poster{position:absolute; inset:0; border:0; padding:0; background:#000; width:100%; cursor:pointer}
+.reel-poster img{width:100%; height:100%; object-fit:cover; opacity:.75; transform:scale(1.02); transition:transform 1.2s var(--ease), opacity .4s}
+.reel-poster:hover img{transform:scale(1.07); opacity:.9}
+.reel-poster .big-play{
+  position:absolute; left:50%; top:50%; translate:-50% -50%;
+  width:clamp(76px,10vw,120px); aspect-ratio:1; border-radius:50%;
+  background:var(--warm); display:grid; place-items:center;
+  box-shadow:-10px 0 0 var(--accent-soft), 0 20px 60px rgba(0,0,0,.5);
+  transition:transform .4s var(--ease), box-shadow .4s var(--ease);
 }
-.reel-strip .tick{color:var(--accent)}
-.reel-fallback{
-  font-family:var(--mono); font-size:12px; color:var(--ink-3);
-  padding-top:10px;
-}
-.reel-fallback a{color:var(--accent); text-underline-offset:3px}
+.reel-poster:hover .big-play{transform:scale(1.08); box-shadow:-18px 0 0 var(--accent-soft), 0 20px 60px rgba(0,0,0,.5)}
+.big-play::after{content:""; border-left:22px solid #fff; border-block:14px solid transparent; margin-left:6px}
+.reel-poster .corner{position:absolute; color:#fff; opacity:.8; font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase}
+.reel-poster .tl{left:18px; top:16px}
+.reel-poster .tr{right:18px; top:16px}
+.reel-poster .bl{left:18px; bottom:16px}
+.reel-poster .br{right:18px; bottom:16px}
+.reel-poster .rec::before{content:""; display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--warm); margin-right:8px; animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.reel-strip{display:flex; flex-wrap:wrap; gap:8px 28px; padding-top:16px; color:var(--ink-3)}
+.reel-strip b{color:var(--ink); font-weight:500}
+.reel-strip a{color:var(--accent); text-underline-offset:3px}
 
-/* ---------- section scaffolding ---------- */
-section{padding-block:44px; border-top:1px solid var(--rule)}
-section:first-of-type{border-top:0}
-.sec-head{display:flex; align-items:baseline; gap:14px; margin-bottom:26px; flex-wrap:wrap}
-.sec-head h2{
-  font-family:var(--display);
-  font-variation-settings:"wdth" 112,"wght" 700;
-  font-size:1.5rem; letter-spacing:-.005em; text-transform:uppercase;
-  margin:0;
-}
-.sec-head .note{color:var(--ink-3); font-size:.875rem}
+/* ================= work chapters ================= */
+.chapter{display:grid; grid-template-columns:minmax(0,4fr) minmax(0,8fr); gap:clamp(28px,4vw,64px); padding-block:clamp(56px,7vw,96px); border-top:1px solid var(--rule)}
+.chapter:first-of-type{border-top:0; padding-top:0}
+.ch-info{position:sticky; top:96px; align-self:start}
+.ch-no{font-family:var(--display); font-variation-settings:"wdth" 125,"wght" 850; font-size:clamp(4rem,9vw,7.5rem); line-height:.8; color:transparent; -webkit-text-stroke:1px var(--ink-3); margin-bottom:18px; position:relative; width:max-content}
+.ch-no::after{content:attr(data-n); position:absolute; left:0; top:0; color:var(--warm); -webkit-text-stroke:0; clip-path:inset(100% 0 0 0); transition:clip-path 1.1s var(--ease) .2s}
+.chapter.in .ch-no::after{clip-path:inset(0 0 0 0)}
+.ch-info h3{font-family:var(--display); font-variation-settings:"wdth" 112,"wght" 750; font-size:clamp(1.6rem,2.6vw,2.2rem); line-height:1.05; letter-spacing:-.01em; margin:0 0 6px; text-transform:uppercase}
+.ch-studio{color:var(--accent); font-weight:500; margin:0 0 16px}
+.ch-info p.desc{color:var(--ink-2); margin:0 0 20px}
+.facts{display:grid; grid-template-columns:auto 1fr; gap:8px 18px; margin:0 0 20px; padding:16px 0 0; border-top:1px solid var(--rule)}
+.facts dt{color:var(--ink-3)}
+.facts dd{margin:0; font-size:.92rem}
+.tags{display:flex; flex-wrap:wrap; gap:6px; padding:0; margin:0; list-style:none}
+.tags li{font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; padding:5px 10px; border:1px solid var(--rule); border-radius:999px; color:var(--ink-2)}
+@media (max-width:860px){ .chapter{grid-template-columns:1fr} .ch-info{position:static} }
 
-/* ---------- x-sheet ---------- */
-.xsheet{border-top:1px solid var(--rule)}
-.xrow{
-  display:grid;
-  grid-template-columns:52px minmax(0,1.55fr) minmax(0,1.15fr) minmax(0,.95fr);
-  gap:4px 18px;
-  padding-block:16px; border-bottom:1px solid var(--rule);
-  position:relative;
+.shots{display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:14px; grid-auto-flow:dense}
+.shot{
+  position:relative; border:0; padding:0; background:var(--surface-2); border-radius:10px; aspect-ratio:16/9;
+  cursor:pointer; text-align:left; isolation:isolate;
 }
-.xrow::before{
-  content:""; position:absolute; left:-12px; right:-12px; top:0; bottom:0;
-  background:var(--accent-soft); opacity:0; pointer-events:none;
-  transition:opacity .18s ease;
+.shot.feat{grid-column:span 2; grid-row:span 2}
+.shot .img{position:absolute; inset:0; overflow:hidden; border-radius:10px; z-index:1}
+.shot img{width:100%; height:100%; object-fit:cover; transition:transform .9s var(--ease), filter .5s}
+.shot::before,.shot::after{
+  content:""; position:absolute; inset:0; border-radius:10px; z-index:0; opacity:0;
+  transition:transform .45s var(--ease), opacity .3s;
 }
-.xrow:hover::before{opacity:1}
-.xnum{
-  font-family:var(--mono); font-size:12px; font-weight:500;
-  color:var(--warm); letter-spacing:.04em; padding-top:3px;
-  font-variant-numeric:tabular-nums;
+.shot::before{background:var(--accent)}
+.shot::after{background:var(--warm)}
+.shot:hover::before{opacity:.6; transform:translate(-7px,-5px)}
+.shot:hover::after{opacity:.7; transform:translate(7px,5px)}
+.shot:hover img{transform:scale(1.06)}
+.shot .ov{
+  position:absolute; inset:0; z-index:2; border-radius:10px; display:flex; flex-direction:column; justify-content:flex-end;
+  padding:12px 14px; color:#fff; background:linear-gradient(0deg, rgba(0,0,0,.72), transparent 55%);
+  opacity:0; transition:opacity .35s;
 }
-.xtitle{font-weight:600; line-height:1.35; min-width:0}
-.xtitle .sub{
-  display:block; font-weight:400; font-size:.875rem;
-  color:var(--ink-3); margin-top:3px;
+.shot:hover .ov,.shot:focus-visible .ov{opacity:1}
+.shot .ov .t{font-weight:600; font-size:.9rem; line-height:1.25}
+.shot .ov .s{font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; opacity:.75}
+.shot .pl{
+  position:absolute; z-index:3; right:12px; top:12px; width:34px; height:34px; border-radius:50%;
+  background:rgba(0,0,0,.55); backdrop-filter:blur(6px); display:grid; place-items:center;
+  transition:background .3s, transform .4s var(--ease);
 }
-.xrole{font-size:.9rem; color:var(--ink-2); min-width:0}
-.xmeta{
-  font-family:var(--mono); font-size:11px; letter-spacing:.05em;
-  color:var(--ink-3); text-transform:uppercase; min-width:0;
-  padding-top:3px;
-}
-@media (max-width:720px){
-  .xrow{grid-template-columns:44px minmax(0,1fr)}
-  .xrole,.xmeta{grid-column:2}
-  .xrole{margin-top:2px}
-}
+.shot .pl::after{content:""; border-left:9px solid #fff; border-block:6px solid transparent; margin-left:2px}
+.shot:hover .pl{background:var(--warm); transform:scale(1.12)}
+.shot .fr{position:absolute; z-index:3; left:10px; top:10px; font-family:var(--mono); font-size:10px; letter-spacing:.08em; color:#fff; background:rgba(0,0,0,.5); padding:3px 7px; border-radius:4px}
+.shot.broken .img{display:grid; place-items:center; color:var(--ink-3); font-family:var(--mono); font-size:11px}
+@media (max-width:520px){ .shots{grid-template-columns:1fr 1fr; gap:10px} .shot.feat{grid-column:span 2; grid-row:span 1} .shot .ov{opacity:1; background:linear-gradient(0deg, rgba(0,0,0,.6), transparent 60%)} .shot .ov .s{display:none} .shot .ov .t{font-size:.75rem} .shot:not(.feat) .fr{display:none} .shot .pl{width:28px; height:28px; right:8px; top:8px} }
+@media (hover:none){ .shot .ov{opacity:1} }
 
-/* ---------- experience ---------- */
-.jobs{display:grid; gap:0; border-top:1px solid var(--rule)}
-.job{
-  display:grid; grid-template-columns:150px minmax(0,1fr); gap:6px 24px;
-  padding-block:20px; border-bottom:1px solid var(--rule);
+/* ================= process ================= */
+.process{background:var(--surface)}
+.proc-grid{display:grid; grid-template-columns:minmax(0,8fr) minmax(0,4fr); gap:clamp(24px,4vw,56px); align-items:start}
+@media (max-width:900px){ .proc-grid{grid-template-columns:1fr} }
+.compare{position:relative; aspect-ratio:16/9; border-radius:14px; overflow:hidden; background:#000; user-select:none; touch-action:pan-y; border:1px solid var(--rule)}
+.compare img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.compare .top{clip-path:inset(0 calc(100% - var(--x,50%)) 0 0)}
+.compare .handle{position:absolute; top:0; bottom:0; left:var(--x,50%); width:2px; background:#fff; translate:-1px 0; pointer-events:none; box-shadow:0 0 0 1px rgba(0,0,0,.2)}
+.compare .handle::after{
+  content:"◂ ▸"; position:absolute; top:50%; left:50%; translate:-50% -50%;
+  width:46px; height:46px; border-radius:50%; background:#fff; color:#111; display:grid; place-items:center;
+  font-size:12px; letter-spacing:2px; box-shadow:0 6px 24px rgba(0,0,0,.35);
 }
-.job .when{
-  font-family:var(--mono); font-size:11px; letter-spacing:.06em;
-  color:var(--ink-3); text-transform:uppercase; padding-top:4px;
-  font-variant-numeric:tabular-nums;
+.compare input{position:absolute; inset:0; width:100%; height:100%; opacity:0; cursor:ew-resize; margin:0}
+.compare .lbl{position:absolute; top:14px; font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#fff; background:rgba(0,0,0,.55); padding:5px 10px; border-radius:999px; pointer-events:none}
+.compare .lbl.l{left:14px} .compare .lbl.r{right:14px}
+.proc-tabs{display:flex; gap:8px; flex-wrap:wrap; margin-top:16px}
+.proc-tabs button{border:1px solid var(--rule); background:transparent; border-radius:999px; padding:8px 14px; font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-2); transition:all .2s}
+.proc-tabs button[aria-selected="true"]{background:var(--ink); color:var(--ground); border-color:var(--ink)}
+.pipeline{list-style:none; margin:0; padding:0; counter-reset:p}
+.pipeline li{position:relative; padding:0 0 26px 44px}
+.pipeline li::before{
+  counter-increment:p; content:counter(p,decimal-leading-zero);
+  position:absolute; left:0; top:0; font-family:var(--mono); font-size:11px; color:var(--warm);
+  width:30px; height:30px; border:1px solid var(--rule); border-radius:50%; display:grid; place-items:center; background:var(--ground);
 }
-.job h3{
-  font-family:var(--body); font-size:1.02rem; font-weight:600;
-  margin:0 0 2px;
-}
-.job .org{color:var(--accent); font-size:.9rem; font-weight:500; margin:0 0 8px}
-.job p.did{margin:0; color:var(--ink-2); font-size:.94rem}
-@media (max-width:620px){ .job{grid-template-columns:1fr} .job .when{padding-top:0} }
+.pipeline li:not(:last-child)::after{content:""; position:absolute; left:15px; top:32px; bottom:4px; width:1px; background:var(--rule)}
+.pipeline h4{margin:3px 0 4px; font-size:1rem}
+.pipeline p{margin:0 0 10px; color:var(--ink-2); font-size:.94rem}
 
-/* ---------- toolkit ---------- */
-.cols{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:30px}
-.chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; padding:0; list-style:none}
-.chips li{
-  font-family:var(--mono); font-size:11px; letter-spacing:.06em;
-  text-transform:uppercase; padding:6px 11px;
-  border:1px solid var(--rule); color:var(--ink-2); background:var(--surface);
-}
-.chips.primary li{border-color:var(--accent); color:var(--accent); background:var(--accent-soft)}
+/* ================= studies ================= */
+.cycles{display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:14px}
+.cycles .shot{aspect-ratio:4/3}
 
-/* ---------- contact ---------- */
-.contact{padding-block:44px 64px; border-top:1px solid var(--rule)}
-.contact h2{
-  font-family:var(--display); font-variation-settings:"wdth" 118,"wght" 800;
-  font-size:clamp(1.9rem,6vw,3rem); text-transform:uppercase;
-  line-height:1; margin:0 0 22px; letter-spacing:-.015em;
+/* ================= art ================= */
+.filters{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:28px}
+.filters button{border:1px solid var(--rule); background:transparent; border-radius:999px; padding:9px 16px; font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-2); transition:all .25s var(--ease)}
+.filters button:hover{border-color:var(--accent); color:var(--ink)}
+.filters button[aria-pressed="true"]{background:var(--accent); border-color:var(--accent); color:#06120F}
+.filters .ct{opacity:.6; margin-left:6px}
+.masonry{columns:4 240px; column-gap:14px}
+.art{
+  break-inside:avoid; margin:0 0 14px; display:block; width:100%; border:0; padding:0; background:var(--surface-2);
+  border-radius:10px; overflow:hidden; cursor:zoom-in; position:relative;
+  transition:opacity .4s, transform .5s var(--ease);
 }
-.links{display:flex; flex-wrap:wrap; gap:10px}
-.links a{
-  display:inline-flex; align-items:center; gap:9px;
-  font-family:var(--mono); font-size:12px; letter-spacing:.06em;
-  text-transform:uppercase; text-decoration:none;
-  padding:11px 16px; border:1px solid var(--rule);
-  background:var(--surface); color:var(--ink);
-  transition:border-color .16s ease, color .16s ease, background .16s ease;
+.art img{width:100%; height:auto; min-height:120px; transition:transform .9s var(--ease)}
+.art:hover img{transform:scale(1.04)}
+.art.hide{display:none}
+.art .cap{position:absolute; left:10px; bottom:10px; font-family:var(--mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase; background:rgba(0,0,0,.6); color:#fff; padding:4px 8px; border-radius:4px; opacity:0; transition:opacity .3s}
+.art:hover .cap{opacity:1}
+
+/* ================= about ================= */
+.about{overflow:hidden}
+.ab{display:grid; grid-template-columns:minmax(250px,4fr) minmax(0,5fr) minmax(0,5fr); gap:clamp(32px,4.5vw,72px); align-items:start}
+@media (max-width:1100px){ .ab{grid-template-columns:minmax(220px,5fr) minmax(0,7fr)} .ab-exp{grid-column:1 / -1} }
+@media (max-width:700px){ .ab{grid-template-columns:1fr} .ab-photo{max-width:330px; margin-inline:auto} }
+.hand{font-family:"Caveat","Comic Sans MS",cursive; font-weight:700; letter-spacing:0; text-transform:none}
+
+/* photo in an arch, with onion-skin ghost arches */
+.ab-photo{position:relative; margin:18px 20px 0 12px}
+.arch{border-radius:999px 999px 22px 22px; aspect-ratio:3/4}
+.arch.main{position:relative; z-index:2; overflow:hidden; background:var(--surface-2); clip-path:inset(100% 0 0 0 round 999px 999px 22px 22px); transition:clip-path 1.2s var(--ease) .15s}
+.arch.main img{width:100%; height:100%; object-fit:cover; object-position:50% 16%; transform:scale(1.12); transition:transform 1.6s var(--ease) .15s}
+.ab-photo.in .arch.main{clip-path:inset(0 0 0 0 round 999px 999px 22px 22px)}
+.ab-photo.in .arch.main img{transform:scale(1)}
+.arch.ghost{position:absolute; inset:0; z-index:1; transition:transform .9s steps(7) .1s, opacity .4s}
+.arch.ghost.a{border:2px solid var(--accent); opacity:0}
+.arch.ghost.b{background:var(--warm); opacity:0}
+.ab-photo.in .arch.ghost.a{opacity:.9; transform:translate(-16px,14px)}
+.ab-photo.in .arch.ghost.b{opacity:.85; transform:translate(14px,-12px)}
+.ab-photo:hover .arch.ghost.a{animation:archBoilA .5s steps(1) infinite}
+.ab-photo:hover .arch.ghost.b{animation:archBoilB .5s steps(1) infinite}
+@keyframes archBoilA{0%{transform:translate(-16px,14px)}50%{transform:translate(-18px,12px)}}
+@keyframes archBoilB{0%{transform:translate(14px,-12px)}50%{transform:translate(16px,-14px)}}
+.spark{position:absolute; z-index:3; color:var(--ink); pointer-events:none}
+.spark svg{width:100%; height:100%; display:block}
+.ab-photo.in .spark{animation:twinkle 1.6s steps(4) infinite}
+.spark.s1{width:34px; height:34px; right:-14px; top:14%}
+.spark.s2{width:20px; height:20px; right:8%; top:3%; color:var(--accent); animation-delay:.4s!important}
+.spark.s3{width:24px; height:24px; left:-18px; bottom:22%; color:var(--warm); animation-delay:.8s!important}
+@keyframes twinkle{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(.55) rotate(20deg)}}
+.doodle{position:absolute; z-index:3; pointer-events:none; fill:none; stroke-linecap:round; stroke-linejoin:round}
+.doodle path{stroke-dasharray:var(--len,400); stroke-dashoffset:var(--len,400); transition:stroke-dashoffset 1.4s var(--ease) .9s}
+.ab-photo.in .doodle path, .hello.in .doodle path{stroke-dashoffset:0}
+.doodle.swirl{left:-26px; bottom:-18px; width:110px; stroke:var(--warm); stroke-width:3}
+.note{position:absolute; z-index:4; right:-8px; top:-30px; font-size:1.55rem; line-height:1; color:var(--accent); transform:rotate(6deg); opacity:0; transition:opacity .5s 1.5s}
+.ab-photo.in .note{opacity:1}
+.note svg{position:absolute; right:58%; top:22px; width:46px; stroke:var(--accent); stroke-width:2.5; fill:none; stroke-linecap:round}
+.loc{display:flex; align-items:center; gap:8px; margin-top:22px; color:var(--ink-2)}
+.loc svg{width:16px; height:16px; flex:none; color:var(--warm)}
+
+/* middle column */
+.hello{position:relative; display:inline-block; margin:0 0 22px; font-family:var(--display); font-style:italic; font-variation-settings:"wdth" 110,"wght" 800; font-size:clamp(2.4rem,4.4vw,3.6rem); line-height:1; letter-spacing:-.02em}
+.hello .bub{
+  display:inline-block; position:relative; padding:.12em .45em .18em; border:3px solid var(--ink); border-radius:999px;
+  background:var(--surface); transform:scale(.4); opacity:0; transform-origin:12% 100%;
 }
-.links a:hover{border-color:var(--accent); color:var(--accent); background:var(--accent-soft)}
-.links a.key{border-color:var(--ink); background:var(--ink); color:var(--ground)}
-.links a.key:hover{background:var(--accent); border-color:var(--accent); color:#fff}
-.colophon{
-  margin-top:34px; padding-top:16px; border-top:1px solid var(--rule);
-  display:flex; justify-content:space-between; gap:12px 20px; flex-wrap:wrap;
+.hello .bub::after{content:""; position:absolute; left:18%; bottom:-11px; width:16px; height:16px; background:var(--surface); border:3px solid var(--ink); border-top:0; border-left:0; transform:rotate(45deg) skew(12deg,12deg)}
+.hello.in .bub{animation:pop .75s cubic-bezier(.3,1.6,.5,1) forwards}
+@keyframes pop{0%{transform:scale(.4,.3); opacity:0}40%{transform:scale(1.12,.88); opacity:1}70%{transform:scale(.95,1.06)}100%{transform:scale(1); opacity:1}}
+.hello .doodle{right:-38px; top:-26px; width:44px; stroke:var(--accent); stroke-width:3}
+.hello .doodle path{transition-delay:.5s}
+.ab-bio{font-size:clamp(1.02rem,1.3vw,1.14rem); color:var(--ink-2); margin:0 0 30px}
+.ab-bio b{color:var(--ink); font-weight:600}
+.ab-h{display:flex; align-items:center; gap:10px; margin:0 0 12px; font-family:var(--display); font-variation-settings:"wdth" 118,"wght" 800; font-size:clamp(1.4rem,2vw,1.75rem); text-transform:uppercase; letter-spacing:-.01em; color:var(--accent)}
+.ab-h i{font-style:normal; color:var(--warm); font-size:.7em; display:inline-block; animation:spin 6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.edu{margin:0 0 30px}
+.edu b{display:block; font-weight:600}
+.edu span{color:var(--ink-2)}
+.sw{display:flex; flex-wrap:wrap; gap:10px; list-style:none; padding:0; margin:0 0 18px}
+.sw li{display:flex; flex-direction:column; align-items:center; gap:6px; width:62px}
+.sw .tile{
+  width:52px; height:52px; border-radius:13px; display:grid; place-items:center; font-weight:700; font-size:1.2rem;
+  background:var(--c); color:var(--fg,#fff); box-shadow:inset 0 0 0 2px rgba(255,255,255,.08);
+  transition:transform .4s cubic-bezier(.3,1.6,.5,1);
 }
+.sw li:hover .tile{transform:translateY(-6px) rotate(-6deg)}
+.sw small{font-size:10.5px; line-height:1.2; text-align:center; color:var(--ink-3)}
+.mini-stats{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--rule); border:1px solid var(--rule); border-radius:12px; overflow:hidden; margin-top:clamp(40px,5vw,64px)}
+@media (max-width:620px){ .mini-stats{grid-template-columns:1fr 1fr} }
+.ab-contact{display:flex; flex-wrap:wrap; gap:10px 28px; padding-top:22px; margin-top:22px; border-top:1px dashed var(--rule)}
+.ab-contact a{display:inline-flex; align-items:center; gap:8px; text-decoration:none; color:var(--ink-2); transition:color .2s}
+.ab-contact a:hover{color:var(--accent)}
+.ab-contact svg{width:16px; height:16px; color:var(--warm)}
+.stats{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--rule); border:1px solid var(--rule); border-radius:14px; overflow:hidden; margin-bottom:32px}
+.stat{background:var(--ground); padding:22px 20px}
+.stat b{display:block; font-family:var(--display); font-variation-settings:"wdth" 120,"wght" 800; font-size:clamp(2.2rem,4vw,3.2rem); line-height:1; font-variant-numeric:tabular-nums}
+.stat b sup{font-size:.45em; color:var(--warm); margin-left:2px; vertical-align:top; position:relative; top:.3em}
+.stat span{color:var(--ink-3)}
+.kit h4{margin:0 0 10px; color:var(--ink-3)}
+.kit .tags{margin-bottom:22px}
+.kit .tags.pri li{border-color:var(--accent); color:var(--accent); background:var(--accent-soft)}
+
+.timeline{position:relative; padding-left:34px}
+.timeline .track{position:absolute; left:6px; top:8px; bottom:8px; width:1px; background:var(--rule)}
+.timeline .track i{position:absolute; inset:0; background:linear-gradient(var(--accent),var(--warm)); transform-origin:top; transform:scaleY(var(--tp,0))}
+.job{position:relative; padding-bottom:40px}
+.job:last-child{padding-bottom:0}
+.job::before{content:""; position:absolute; left:-34px; top:6px; width:13px; height:13px; border-radius:50%; background:var(--ground); border:2px solid var(--accent)}
+.job.edu::before{border-color:var(--warm)}
+.job .when{color:var(--ink-3); font-variant-numeric:tabular-nums}
+.job h3{font-family:var(--display); font-variation-settings:"wdth" 110,"wght" 700; font-size:1.35rem; margin:6px 0 2px; line-height:1.2}
+.job .org{color:var(--accent); margin:0 0 10px; font-weight:500}
+.job.edu .org{color:var(--warm)}
+.job p.did{margin:0; color:var(--ink-2)}
+
+/* ================= contact ================= */
+.contact{padding-bottom:40px; overflow:hidden}
+.big-cta{
+  font-family:var(--display); font-variation-settings:"wdth" 125,"wght" 850;
+  font-size:clamp(2.8rem,10vw,9rem); line-height:.86; letter-spacing:-.035em; text-transform:uppercase; margin:0 0 36px;
+}
+.big-cta .o{color:transparent; -webkit-text-stroke:1.5px var(--ink)}
+.big-cta .a{color:var(--warm)}
+.mail{
+  display:inline-flex; align-items:center; gap:16px; text-decoration:none;
+  font-size:clamp(1.1rem,2.6vw,2rem); font-weight:500; border-bottom:2px solid var(--accent); padding-bottom:6px;
+  word-break:break-all;
+}
+.mail .arr{transition:transform .4s var(--ease)}
+.mail:hover .arr{transform:translate(6px,-6px)}
+.contact-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:32px}
+.marquee{border-block:1px solid var(--rule); padding-block:18px; margin-top:clamp(64px,9vw,120px); overflow:hidden; white-space:nowrap}
+.marquee .track2{display:inline-flex; gap:40px; animation:marquee 40s linear infinite; font-family:var(--display); font-variation-settings:"wdth" 120,"wght" 700; font-size:clamp(1.4rem,3vw,2.2rem); text-transform:uppercase}
+.marquee .track2 span:nth-child(even){color:var(--ink-3)}
+.foot{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px 24px; padding-top:24px; color:var(--ink-3)}
+
+/* ================= lightbox ================= */
+#lb{
+  position:fixed; inset:0; z-index:90; background:rgba(5,6,9,.94); backdrop-filter:blur(10px);
+  display:grid; grid-template-rows:auto 1fr auto; opacity:0; pointer-events:none; transition:opacity .3s;
+}
+#lb.open{opacity:1; pointer-events:auto}
+.lb-top{display:flex; justify-content:space-between; align-items:center; padding:14px var(--pad); color:#aab}
+.lb-stage{position:relative; display:grid; place-items:center; padding:0 clamp(12px,6vw,90px); min-height:0}
+.lb-media{width:min(100%, calc((100svh - 170px) * 16 / 9)); aspect-ratio:16/9; background:#000; border-radius:10px; overflow:hidden; position:relative; transform:scale(.97); transition:transform .4s var(--ease)}
+#lb.open .lb-media{transform:none}
+.lb-media iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+.lb-media.img{aspect-ratio:auto; width:auto; height:auto; max-width:100%; max-height:calc(100svh - 170px); background:transparent}
+.lb-media.img img{max-height:calc(100svh - 170px); width:auto; margin:auto; border-radius:10px}
+.lb-cap{padding:14px var(--pad) 22px; color:#fff; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap}
+.lb-cap b{font-weight:600}
+.lb-cap span{color:#99a; font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase}
+.lb-nav{position:absolute; top:50%; translate:0 -50%; width:46px; height:46px; border-radius:50%; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); color:#fff; display:grid; place-items:center; font-size:18px}
+.lb-nav:hover{background:var(--warm); border-color:var(--warm)}
+.lb-prev{left:clamp(6px,2vw,24px)} .lb-next{right:clamp(6px,2vw,24px)}
+.lb-close{background:transparent; border:1px solid rgba(255,255,255,.2); border-radius:999px; padding:8px 14px; color:#fff; font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase}
+.lb-close:hover{border-color:var(--warm)}
+.spinner{position:absolute; inset:0; display:grid; place-items:center; color:#667; font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; z-index:0}
+.lb-media iframe{z-index:1}
+.lb-media img{position:relative; z-index:1}
 
 @media (prefers-reduced-motion:reduce){
-  *{transition:none!important; animation:none!important}
+  *,*::before,*::after{animation:none!important; transition:none!important; scroll-behavior:auto!important}
+  [data-reveal]{opacity:1; transform:none}
+  .split .w > span{transform:none}
+  #loader{display:none}
+  .hello .bub{opacity:1; transform:none}
+  .arch.main{clip-path:none}
 }
 </style>
 </head>
 <body>
-<header class="topbar">
+
+<div id="loader" aria-hidden="true">
+  <div class="ld">
+    <div class="ld-stage"><div class="ld-x"><div class="ld-y"><div class="ld-ball"></div></div></div></div>
+    <div class="ld-meta mono"><span>Exercise 01 — Bouncing ball</span><span>FR <b id="ldc">00</b>/24</span></div>
+  </div>
+</div>
+
+<header class="hdr" id="hdr">
   <div class="wrap">
-    <span class="mark">Haritha Haridas</span>
-    <nav>
+    <a class="brand" href="#top" aria-label="Haritha Haridas — home">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i></span>
+      <span>Haritha Haridas</span>
+    </a>
+    <nav class="nav mono" id="nav" aria-label="Sections">
       <a href="#reel">Reel</a>
       <a href="#work">Work</a>
-      <a href="#experience">Experience</a>
+      <a href="#process">Process</a>
+      <a href="#studies">Studies</a>
+      <a href="#art">Art</a>
+      <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
+    <div class="hdr-tools">
+      <span class="tc mono" id="tc" title="Scroll timecode at 24fps">TC <b>00:00:00</b></span>
+      <button class="icon-btn" id="theme" aria-label="Toggle light and dark theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+      </button>
+      <a class="btn sm key hire" href="#contact">Hire me</a>
+      <button class="icon-btn menu-btn" id="menu" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 17h18"/></svg>
+      </button>
+    </div>
   </div>
+  <div class="progress" id="progress"></div>
 </header>
 
-<main>
-  <div class="wrap">
+<main id="top">
 
-    <div class="hero">
-      <div class="meta rail">
-        <span>2D Animator</span>
-        <span>Kochi, Kerala</span>
-        <span>5 years in studio</span>
+  <!-- ============ HERO ============ -->
+  <div class="hero">
+    <div class="strips" id="strips" aria-hidden="true"></div>
+    <div class="wrap hero-in">
+      <div class="status mono">
+        <span><i class="dot"></i>Available for studio &amp; freelance roles</span>
+        <span>2D Character Animator</span>
+        <span>Kochi, Kerala · Remote OK</span>
       </div>
-      <h1>Haritha<br>Haridas</h1>
-      <p class="lede">
-        Character animator working in <strong>puppet, classical and semi-realistic 2D</strong> —
-        from key poses and storyboards through to final clean-up. Five years across
-        YouTube series, music video and pre-production work in Toon Boom Harmony and Adobe Animate.
-      </p>
+      <h1 class="name">
+        <span class="ln" data-text="Haritha"><span>Haritha</span></span>
+        <span class="ln" data-text="Haridas"><span>Haridas</span></span>
+      </h1>
+      <div class="hero-row">
+        <p class="lede">
+          Five years animating for studios. <strong>Puppet rigs, classical frame-by-frame, and
+          painted Photoshop animation</strong>, from key poses through to final clean-up.
+        </p>
+        <div class="ctas">
+          <a class="btn key" href="#reel" id="heroPlay"><span class="play-ico"></span>Play showreel</a>
+          <a class="btn" href="#work">See the work ↓</a>
+        </div>
+      </div>
     </div>
+    <div class="scroll-cue mono"><i></i>Scroll</div>
+  </div>
 
-    <section id="reel" class="reel" style="border-top:0;padding-top:0">
-      <div class="reel-strip rail">
-        <span class="tick">▸ Showreel 2026</span>
-        <span>Runtime 01:44</span>
-        <span>Toon Boom Harmony · Adobe Animate · Photoshop</span>
-      </div>
-      <div class="reel-frame">
-        <iframe
-          src="https://player.vimeo.com/video/1228117721?title=0&amp;byline=0&amp;portrait=0"
-          title="Haritha Haridas — 2D Animation Showreel"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowfullscreen
-          loading="lazy"></iframe>
-      </div>
-      <p class="reel-fallback">
-        Player not loading? <a href="https://vimeo.com/1228117721" target="_blank" rel="noopener">Watch the reel on Vimeo →</a>
-      </p>
-    </section>
-
-    <section id="work">
+  <!-- ============ REEL ============ -->
+  <section id="reel" class="rule-top">
+    <div class="wrap">
       <div class="sec-head">
-        <h2>Shot breakdown</h2>
-        <span class="note">What I animated, and on what.</span>
+        <span class="sec-num">SC 01</span>
+        <h2 class="split">Showreel 2026</h2>
+        <p data-reveal>One minute forty-four seconds covering series work, music video and painted animation.</p>
       </div>
-      <div class="xsheet">
-
-        <div class="xrow">
-          <div class="xnum">00</div>
-          <div class="xtitle">2D Animation Showreel
-            <span class="sub">Compilation cut — 1 min 44 sec</span>
-          </div>
-          <div class="xrole">Animation, selection and edit</div>
-          <div class="xmeta">2026</div>
-        </div>
-
-        <div class="xrow">
-          <div class="xnum">01</div>
-          <div class="xtitle">MSA
-            <span class="sub">YouTube animated series</span>
-          </div>
-          <div class="xrole">Puppet-based character animation, key poses; worked to BG artist's plates</div>
-          <div class="xmeta">ZVoid · Toon Boom</div>
-        </div>
-
-        <div class="xrow">
-          <div class="xnum">02</div>
-          <div class="xtitle">Naxon — “Stories For Men” &amp; “Artul”
-            <span class="sub">Money-story shorts for YouTube</span>
-          </div>
-          <div class="xrole">Chibi, comic and anime-style character animation</div>
-          <div class="xmeta">ZVoid · Animate</div>
-        </div>
-
-        <div class="xrow">
-          <div class="xnum">03</div>
-          <div class="xtitle">Lupin's Tale
-            <span class="sub">YouTube animated series</span>
-          </div>
-          <div class="xrole">Character animation across multiple episodes</div>
-          <div class="xmeta">Motion PhilmCGI</div>
-        </div>
-
-        <div class="xrow">
-          <div class="xnum">04</div>
-          <div class="xtitle">“Something to Lose” — KBIR
-            <span class="sub">Music video</span>
-          </div>
-          <div class="xrole">Animation and pre-production</div>
-          <div class="xmeta">Motion PhilmCGI</div>
-        </div>
-
-        <div class="xrow">
-          <div class="xnum">05</div>
-          <div class="xtitle">Semi-realistic animation project
-            <span class="sub">Puppet and classical passes</span>
-          </div>
-          <div class="xrole">Animation, character study, storyboarding, pre-production</div>
-          <div class="xmeta">Motion PhilmCGI</div>
-        </div>
-
-        <div class="xrow">
-          <div class="xnum">06</div>
-          <div class="xtitle">Prop &amp; staging design
-            <span class="sub">Series production</span>
-          </div>
-          <div class="xrole">2D prop design, tracing and colouring rough props from animatic</div>
-          <div class="xmeta">Phoebus Creation · 2019</div>
-        </div>
-
-        <div class="xrow">
-          <div class="xnum">07</div>
-          <div class="xtitle">Personal work &amp; studies
-            <span class="sub">Ongoing</span>
-          </div>
-          <div class="xrole">Perspective drawing, dynamic poses, short loops</div>
-          <div class="xmeta">Ongoing</div>
-        </div>
-
+      <div class="reel-frame" id="reelFrame" data-reveal>
+        <button class="reel-poster" id="reelPoster" aria-label="Play showreel">
+          <img src="https://drive.google.com/thumbnail?id=1CHj_9XIzFCDTxVNRZ48zz5HnDczRBB7I&sz=w1600" alt="" referrerpolicy="no-referrer" loading="lazy">
+          <span class="big-play"></span>
+          <span class="corner tl rec">Showreel</span>
+          <span class="corner tr">16:9 · 24 fps</span>
+          <span class="corner bl">Haritha Haridas</span>
+          <span class="corner br">01:44</span>
+        </button>
       </div>
-    </section>
+      <div class="reel-strip mono">
+        <span>Runtime <b>01:44</b></span>
+        <span>Tools <b>Toon Boom · Animate · Photoshop</b></span>
+        <span><a href="https://vimeo.com/1228117721" target="_blank" rel="noopener">Open on Vimeo ↗</a></span>
+      </div>
+    </div>
+  </section>
 
-    <section id="experience">
+  <!-- ============ WORK ============ -->
+  <section id="work" class="rule-top">
+    <div class="wrap">
       <div class="sec-head">
-        <h2>Experience</h2>
-        <span class="note">Nov 2020 — present.</span>
+        <span class="sec-num">SC 02</span>
+        <h2 class="split">Selected work</h2>
+        <p data-reveal>Shots from four productions, each with what I did on it. Click any frame to play it.</p>
       </div>
-      <div class="jobs">
+      <div id="chapters"></div>
+    </div>
+  </section>
 
-        <div class="job">
-          <div class="when">Feb 2024 — Jan 2026</div>
-          <div>
+  <!-- ============ PROCESS ============ -->
+  <section id="process" class="process rule-top">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">SC 03</span>
+        <h2 class="split">Rough to final</h2>
+        <p data-reveal>Shots from the music video “Something to Lose” by KBIR. Drag the slider to compare the rough pass with the clean-up.</p>
+      </div>
+      <div class="proc-grid">
+        <div data-reveal>
+          <div class="compare" id="compare">
+            <img class="bot" id="cmpB" alt="Clean-up pass" referrerpolicy="no-referrer">
+            <img class="top" id="cmpA" alt="Rough pass" referrerpolicy="no-referrer">
+            <span class="lbl l">Rough</span><span class="lbl r">Clean-up</span>
+            <div class="handle"></div>
+            <input type="range" min="0" max="100" value="50" id="cmpR" aria-label="Compare rough and clean-up">
+          </div>
+          <div class="proc-tabs" id="procTabs" role="tablist"></div>
+        </div>
+        <ol class="pipeline" data-reveal style="--d:.15s">
+          <li><h4>Rough animation</h4><p>Loose key poses and breakdowns to lock timing and acting before any line gets cleaned.</p><button class="btn sm" data-proc="rough">▶ Play rough</button></li>
+          <li><h4>Clean-up</h4><p>Final line on model, on the same timing, with volumes held frame to frame.</p><button class="btn sm" data-proc="clean">▶ Play clean-up</button></li>
+          <li><h4>Colour and comp</h4><p>Flats, lighting and the shot placed in the edit.</p><button class="btn sm" data-proc="final">▶ Play final</button></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STUDIES ============ -->
+  <section id="studies" class="rule-top">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">SC 04</span>
+        <h2 class="split">Motion studies</h2>
+        <p data-reveal>Walk and run cycles, acting tests and live-action reference studies from outside studio hours.</p>
+      </div>
+      <div class="cycles" id="cycles"></div>
+    </div>
+  </section>
+
+  <!-- ============ ART ============ -->
+  <section id="art" class="rule-top">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">SC 05</span>
+        <h2 class="split">Drawing &amp; design</h2>
+        <p data-reveal>Illustration, character design and sketchbook pages.</p>
+      </div>
+      <div class="filters" id="filters" data-reveal></div>
+      <div class="masonry" id="masonry"></div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="about rule-top">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:clamp(28px,4vw,48px)"><span class="sec-num" style="padding-top:0;align-self:center">SC 06</span><span class="mono" style="color:var(--ink-3);align-self:center">About me</span></div>
+      <div class="ab">
+
+        <!-- photo -->
+        <div>
+          <figure class="ab-photo" data-reveal style="margin-bottom:0">
+            <div class="arch ghost a" aria-hidden="true"></div>
+            <div class="arch ghost b" aria-hidden="true"></div>
+            <div class="arch main"><img src="assets/haritha.jpg" alt="Portrait of Haritha Haridas" loading="lazy" width="661" height="870"></div>
+            <span class="spark s1" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.6 6.2 5.8 11.4 12 12-6.2.6-11.4 5.8-12 12-.6-6.2-5.8-11.4-12-12C6.2 11.4 11.4 6.2 12 0z"/></svg></span>
+            <span class="spark s2" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.6 6.2 5.8 11.4 12 12-6.2.6-11.4 5.8-12 12-.6-6.2-5.8-11.4-12-12C6.2 11.4 11.4 6.2 12 0z"/></svg></span>
+            <span class="spark s3" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.6 6.2 5.8 11.4 12 12-6.2.6-11.4 5.8-12 12-.6-6.2-5.8-11.4-12-12C6.2 11.4 11.4 6.2 12 0z"/></svg></span>
+            <svg class="doodle swirl" viewBox="0 0 110 60" aria-hidden="true"><path style="--len:260" d="M4 50c14-2 22-14 18-24-3-8-14-6-12 3 3 12 24 14 38 4 12-9 16-24 30-26 10-1 18 6 24 14"/></svg>
+            <span class="note hand" aria-hidden="true">hi, it's me!<svg viewBox="0 0 46 40"><path d="M40 4C26 6 12 16 8 34M8 34l-4-9M8 34l9-5"/></svg></span>
+          </figure>
+          <p class="loc mono" data-reveal style="--d:.2s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Kochi, Kerala, India</p>
+        </div>
+
+        <!-- hello / education / skills -->
+        <div class="ab-mid">
+          <h2 class="hello" data-reveal><span class="bub">Hello!</span><svg class="doodle" viewBox="0 0 44 44" aria-hidden="true"><path style="--len:60" d="M6 30c6-10 14-16 26-18M10 38c6-6 12-10 22-11M4 20C12 10 22 5 36 4"/></svg></h2>
+          <p class="ab-bio" data-reveal>
+            I'm <b>Haritha Haridas</b>, a 2D animator from Kerala. I've spent five years in studio
+            production on YouTube series, a music video and painted short-form work. I switch between
+            <b>puppet rigs</b> and <b>full frame-by-frame</b> depending on what the shot needs, and I work
+            closely with background artists and leads to get shots finished on schedule.
+          </p>
+          <h3 class="ab-h" data-reveal>Education <i>✦</i></h3>
+          <p class="edu" data-reveal><b>2017 – 2020 · Bharati Vidyapeeth Deemed University</b><span>BSc Animation &amp; Gaming, graduated with a 9.32 CGPA</span></p>
+          <h3 class="ab-h" data-reveal>Skills <i>✦</i></h3>
+          <ul class="sw" data-reveal>
+            <li><span class="tile" style="--c:#2B2F3A">Tb</span><small>Toon Boom Harmony</small></li>
+            <li><span class="tile" style="--c:#3A1215;--fg:#FF6A5C">An</span><small>Adobe Animate</small></li>
+            <li><span class="tile" style="--c:#0B1E36;--fg:#4FB4FF">Ps</span><small>Photoshop</small></li>
+            <li><span class="tile" style="--c:#3B2410;--fg:#FF9A3C">Bl</span><small>Blender 2D</small></li>
+            <li><span class="tile" style="--c:#1D2A3E;--fg:#7FB2FF">Kr</span><small>Krita</small></li>
+          </ul>
+          <ul class="tags" data-reveal><li>Puppet animation</li><li>Classical</li><li>Key poses</li><li>Clean-up</li><li>Storyboarding</li><li>Character study</li><li>Pre-production</li><li>Prop design</li></ul>
+        </div>
+
+        <!-- experience -->
+        <div class="ab-exp">
+          <h3 class="ab-h" data-reveal style="margin-bottom:22px">Experience <i>✦</i></h3>
+        <div class="timeline" id="timeline">
+          <div class="track"><i></i></div>
+          <div class="job" data-reveal>
+            <span class="when mono">Feb 2024 — Jan 2026</span>
             <h3>2D Animation Assistant</h3>
             <p class="org">ZVoid Studios · Kerala</p>
-            <p class="did">Puppet-based animation for the MSA YouTube series and the Naxon channel.
-            Built key poses and final animation across chibi, comic and anime styles in Toon Boom
-            Harmony, Adobe Animate and Photoshop, working closely with the background artist and
-            turning lead feedback into shot-level fixes.</p>
+            <p class="did">Puppet-based animation for the MSA YouTube series and the Naxon channel
+            (“Stories For Men”, “Artul”). Key poses and final animation in chibi, comic and anime styles,
+            built to the background artist's plates.</p>
           </div>
-        </div>
-
-        <div class="job">
-          <div class="when">Nov 2020 — Jan 2024</div>
-          <div>
+          <div class="job" data-reveal>
+            <span class="when mono">Nov 2020 — Jan 2024</span>
             <h3>Junior Animator → Animator</h3>
             <p class="org">Motion PhilmCGI · Maharashtra</p>
-            <p class="did">Semi-realistic, puppet and classical animation. Storyboarding, character
-            study and pre-production alongside production animation on Lupin's Tale and the KBIR
-            music video. Ran several projects in parallel to deadline and contributed ideas in
-            brainstorming that made it into the final work.</p>
+            <p class="did">Promoted from junior. Semi-realistic, puppet and classical animation on
+            Lupin's Tale and KBIR's “Something to Lose”, plus storyboarding, character study and
+            pre-production. Ran several projects in parallel to deadline.</p>
           </div>
-        </div>
-
-        <div class="job">
-          <div class="when">Jun — Aug 2019</div>
-          <div>
+          <div class="job" data-reveal>
+            <span class="when mono">Jun — Aug 2019</span>
             <h3>Prop &amp; Staging Intern</h3>
             <p class="org">Phoebus Creation Media · Maharashtra</p>
-            <p class="did">Created and maintained 2D prop designs for a series; traced and coloured
-            rough props from the animatic and sat in on storyboarding sessions.</p>
+            <p class="did">2D prop design for a series. Traced and coloured rough props from the animatic and sat in on storyboarding sessions.</p>
           </div>
         </div>
-
-        <div class="job">
-          <div class="when">2017 — 2020</div>
-          <div>
-            <h3>BSc Animation &amp; Gaming</h3>
-            <p class="org">Bharati Vidyapeeth Deemed University</p>
-            <p class="did">Graduated with 9.32 CGPA.</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="toolkit">
-      <div class="sec-head">
-        <h2>Toolkit</h2>
-      </div>
-      <div class="cols">
-        <div>
-          <span class="rail">Software</span>
-          <ul class="chips primary">
-            <li>Toon Boom Harmony</li>
-            <li>Adobe Animate</li>
-            <li>Adobe Photoshop</li>
-            <li>Blender (2D)</li>
-            <li>Krita</li>
-          </ul>
-        </div>
-        <div>
-          <span class="rail">Craft</span>
-          <ul class="chips">
-            <li>Puppet animation</li>
-            <li>Classical animation</li>
-            <li>Key poses</li>
-            <li>Storyboarding</li>
-            <li>Character study</li>
-            <li>Pre-production</li>
-            <li>Prop design</li>
-            <li>Perspective drawing</li>
-            <li>Dynamic poses</li>
-          </ul>
         </div>
       </div>
-    </section>
 
-  </div>
+      <div class="mini-stats" data-reveal>
+        <div class="stat"><b data-count="5">0</b><span class="mono">Years in studio</span></div>
+        <div class="stat"><b data-count="3">0</b><span class="mono">Studios</span></div>
+        <div class="stat"><b data-count="4">0</b><span class="mono">Productions</span></div>
+        <div class="stat"><b data-count="9.32" data-dec="2">0</b><span class="mono">BSc CGPA</span></div>
+      </div>
+      <div class="ab-contact mono" data-reveal>
+        <a href="mailto:haritha.hari4899@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>haritha.hari4899@gmail.com</a>
+        <a href="https://www.instagram.com/haritha_harry04" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>@haritha_harry04</a>
+        <a href="https://drive.google.com/file/d/1ThEpa1dcv-4Xg7rb9vTFxB1o4fiF_Zt0/view" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg>Résumé (PDF)</a>
+      </div>
+    </div>
+  </section>
 
-  <div class="wrap">
-    <section id="contact" class="contact" style="padding-block:44px 64px">
-      <h2>Open to work</h2>
-      <p class="lede" style="margin-bottom:26px">
-        Available for 2D character animation — series, shorts and music video.
-        Remote or Kochi-based.
-      </p>
-      <div class="links">
-        <a class="key" href="mailto:haritha.hari4899@gmail.com">Email me</a>
-        <a href="https://vimeo.com/1228117721" target="_blank" rel="noopener">Vimeo</a>
-        <a href="https://www.instagram.com/haritha_harry04" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://drive.google.com/drive/folders/1HD-Uuz3CvH2GQ3y7Pkzza6Z3K6LUwxV0" target="_blank" rel="noopener">Résumé (PDF)</a>
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="contact rule-top">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:28px"><span class="sec-num" style="padding-top:0;align-self:center">SC 07</span><span class="mono" style="color:var(--ink-3);align-self:center">Open to work</span></div>
+      <h2 class="big-cta split">Let's make <span class="o">something</span> <span class="a">move.</span></h2>
+      <a class="mail" href="mailto:haritha.hari4899@gmail.com?subject=Animation%20role%20%E2%80%94%20" data-reveal>haritha.hari4899@gmail.com <span class="arr">↗</span></a>
+      <div class="contact-row" data-reveal style="--d:.1s">
+        <button class="btn" id="copyMail">Copy email</button>
+        <a class="btn" href="https://drive.google.com/file/d/1ThEpa1dcv-4Xg7rb9vTFxB1o4fiF_Zt0/view" target="_blank" rel="noopener">Résumé (PDF) ↗</a>
+        <a class="btn" href="https://vimeo.com/1228117721" target="_blank" rel="noopener">Vimeo ↗</a>
+        <a class="btn" href="https://www.instagram.com/haritha_harry04" target="_blank" rel="noopener">Instagram ↗</a>
       </div>
-      <div class="colophon rail">
-        <span>Haritha Haridas — 2D Animator</span>
-        <span>Kochi, Kerala, India</span>
+    </div>
+    <div class="marquee" aria-hidden="true"><div class="track2" id="mq"></div></div>
+    <div class="wrap">
+      <div class="foot mono">
+        <span>© <span id="yr"></span> Haritha Haridas</span>
+        <span>2D Animator · Kochi, Kerala, India</span>
+        <a href="#top" style="text-decoration:none">Back to frame 01 ↑</a>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </main>
 
+<!-- ============ LIGHTBOX ============ -->
+<div id="lb" role="dialog" aria-modal="true" aria-label="Media viewer" aria-hidden="true">
+  <div class="lb-top mono"><span id="lbCount"></span><button class="lb-close" id="lbClose">Close ✕</button></div>
+  <div class="lb-stage">
+    <div class="lb-media" id="lbMedia"></div>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">←</button>
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Next">→</button>
+  </div>
+  <div class="lb-cap"><b id="lbTitle"></b><span id="lbSub"></span></div>
+</div>
+
+<script>
+/* =====================================================================
+   CONTENT — every piece of media is a Google Drive file ID.
+   To swap in self-hosted files or Vimeo/YouTube later, change media()
+   and thumb() below; the data stays the same.
+   ===================================================================== */
+const thumb = (id, w = 800) => `https://drive.google.com/thumbnail?id=${id}&sz=w${w}`;
+const media = id => `https://drive.google.com/file/d/${id}/preview`;
+
+const CHAPTERS = [
+  {
+    key: 'painted', n: '01', title: 'Painted animation',
+    studio: 'Frame-by-frame in Photoshop',
+    desc: 'Hand-painted animation with cinematic lighting: water, silhouettes, dusk skies and title concepts. Each frame is painted, with no rig.',
+    facts: [['Role', 'Animation, painting, correction passes'], ['Tool', 'Adobe Photoshop'], ['Style', 'Painterly, cinematic']],
+    tags: ['Frame-by-frame', 'Lighting', 'FX: water'],
+    shots: [
+      ['1CHj_9XIzFCDTxVNRZ48zz5HnDczRBB7I', 'Hourglass: title concept, colour', 'Title concept', true],
+      ['11N6d-0MQVDcJ_V9FxZnp4A-P19eObKXP', 'Close-up, night interior', 'Ep 001 · Sh 0120'],
+      ['1YvKZJVUoLjby_lFH0pRvpCs5XWX7nE1B', 'Chained at dusk', 'Ep 102 · Sq 080'],
+      ['1-GWwkfDzDMsJpWmxnKsD9HW636tJgqcD', 'Underwater struggle', 'Ep 103 · Sq 030'],
+      ['1I7QXVGovwqZlNr1S6iXTtsyIcGmnaM4Q', 'Impossible stairs', 'Ep 102 · Sq 070'],
+      ['1oHkY8fawJQI0eb2Qui5yv-6M_IhaVCTu', 'The wave', 'Ep 103 · Sh 0130'],
+      ['1eSUJxg9rKSq2JN4hFk9lYS0P9M4XtFj0', 'Moonlit window', 'Ep 101 · Sq 011'],
+      ['1-EkEQqy6FI0EBmskFqH0loTDPOOGc4Dt', 'Reaching up', 'Ep 102 · Sh 0020'],
+      ['1cg4z7q9Y-TMINwk5z3e1xIHLNr97LGGq', 'Blue hour', 'Sq 20'],
+      ['1jluJUhCKWzWp4nsOBkfN5WaORsAeImj2', 'Descent', 'Ep 103 · Sh 0120'],
+      ['1gKhNsKtwdJAkYckfVtL9Rod9_2DTcTHe', 'Hourglass: line and correction pass', 'Title concept'],
+    ]
+  },
+  {
+    key: 'msa', n: '02', title: 'MSA',
+    studio: 'ZVoid Studios · 2024–2026',
+    desc: 'An animated YouTube series with an anime and comic look. I did puppet-based character animation, key poses and finals, built to the background artist\'s plates on a weekly schedule.',
+    facts: [['Role', 'Key poses, final animation'], ['Tools', 'Toon Boom Harmony, Animate'], ['Format', 'YouTube series']],
+    tags: ['Puppet rig', 'Anime / comic', 'Acting'],
+    shots: [
+      ['1i11rNwu3SRwI-Qa6WgK6qVKmljVfN7CC', 'Reaction close-up', 'Shot 07', true],
+      ['1_Z_YpqASlhIsv9Ug2Yi1ItfH0l_manJ5', 'Two-shot', 'FR 1209–1473'],
+      ['1vBXJNseYtsLA9MwuJ_bH4DhXSbdYsfPr', 'Gesture beat', 'FR 3402–3469'],
+      ['1wHvgSsGEbiAGzE5dsIA61jLUHIOK9Jax', 'Seated dialogue', 'FR 3613–3775'],
+      ['10dzIgSWtFYS880_HUxvtRoaaV7TPDrc3', 'Confrontation', 'FR 8949–9031'],
+      ['1DnkEN6-quVkY0HdskoaZ4CWhLpp-qMo2', 'Group scene', 'FR 9867–10113'],
+      ['1u-XajDK3Z_0zhHr4AZG8-BZuTX5fcyfP', 'Over-the-shoulder', 'FR 10140–10248'],
+      ['1pvWXd12kEoCURgt1qdKnU5EnKJaUcV-M', 'Argument', 'FR 11199–11346'],
+      ['1-u8Ft4W_Xc29nVj7WDczQgUwqWBOIOrZ', 'Surprise take', 'FR 12863–12990'],
+      ['1-q_Mm7mubLuPN6EEeh5p8eDVJ96DaP_0', 'Grief', 'FR 16263–16368'],
+      ['1uUwOepcrdWkKpYnTMy73VBK8Au1skdZc', 'Comic beat', 'FR 20294–20545'],
+      ['1ob9Ao0_4g140bbBb8i7Xk8G--lhdflQN', 'Ladder climb', 'Sc 06 · Sh 01'],
+      ['1cMSS-rnX-zSTCAQl8ru0uf4Bcs5lz_DA', 'Football', 'FR 0487–0509'],
+    ]
+  },
+  {
+    key: 'lupin', n: '03', title: "Lupin's Tale",
+    studio: 'Motion PhilmCGI · 2020–2024',
+    desc: 'A bright children\'s YouTube series. I animated characters across several episodes, handling broad, readable acting and prop interaction in a jungle world.',
+    facts: [['Role', 'Character animation'], ['Tools', 'Toon Boom Harmony, Animate'], ['Format', 'YouTube series']],
+    tags: ['Kids / preschool', 'Puppet + classical', 'Multi-episode'],
+    shots: [
+      ['1Pk6j-HhCr_dbqMUf4MC9H76XsmEMTnkA', 'Waterfall clearing', 'Shot 02', true],
+      ['1oG7s3rAwu_98GYdmYVxza8urHdsRJNkV', 'The gingerbread trio', 'Shot 01'],
+      ['1kQgh1Y_8XeE5JqBod1nsVSvH7TByJ6v1', 'Flower friend', 'Shot 03'],
+      ['1MCiTrs26NoOyDPegik6gQR27ClNEK-aj', 'Cottage', 'Shot 04'],
+      ['1e_UHU3BNliWx8NWAwsCxmVOtoxk_txI8', 'Peek-a-boo', 'Shot 05'],
+      ['1Pavlv0ZfWJeqvz8yg6jmlJdJQDZstphN', 'Big cheer', 'Shot 06'],
+      ['1FylGCBwQ6YU9zNfcXG7427s0251kaE95', 'Jungle path', 'Shot 07'],
+      ['1OpasEaPgA3YUJrEdzl5bCzcd6BVMXpUY', 'Mushroom grove', 'Shot 08'],
+      ['1_gfWV0uC0Bj8rfQIdnKQPJ7v2YKBjWGR', 'Hide and seek', 'Shot 09'],
+    ]
+  },
+  {
+    key: 'kbir', n: '04', title: '“Something to Lose”',
+    studio: 'KBIR music video · Motion PhilmCGI',
+    desc: 'An animated music video. I took shots from rough through clean-up and did pre-production on the character. The full process is shown in the next section.',
+    facts: [['Role', 'Rough, clean-up, pre-production'], ['Format', 'Music video'], ['Artist', 'KBIR']],
+    tags: ['Classical', 'Clean-up', 'Pre-production'],
+    shots: [
+      ['1W_1k7PmdQU6qL5Cg53K-hhL2z1Jz6sHq', 'Cigar: final', 'STL 10', true],
+      ['1R_9vcI3_K3k3Aj5qz-W9zYLLdCEy-XhB', 'Vinyl open', 'STL 01'],
+      ['1AD1HTgNm48uhErFcXxv_HSVlNN4O2gMH', 'Screens', 'STL 08–10'],
+      ['1u7a9wwFKA7JqSbqzlMSQdqCgh5py03ZU', 'Character rough', 'Rough'],
+      ['1iC6CZIQ-k58pmJseFAWJwsGAdVwtV391', 'Layout and rough over reference', 'WIP'],
+    ]
+  },
+];
+
+const PROCESS = [
+  { label: 'STL 10 · Cigar', rough: '1S7x7ozHfGIHUl1cPOsHmexvuLGCUnS5s', clean: '1_TdB2DMK5r8Xs0UnIDyTxwALNjt1f6NR', final: '1W_1k7PmdQU6qL5Cg53K-hhL2z1Jz6sHq' },
+  { label: 'STL 14', rough: '1D-yqcEFdiChgUTxFKm_I-ZA7sfv0360r', clean: '1_JEvY7GBOHzFWjhWUgQTpI6lQSy7L3lz', final: null },
+  { label: 'STL 08', rough: '10DaP5KYL97Ds-FHC9tB_CwsQv9OpVvN_', clean: '1i4Be8BjcbBOXdVJQ-77xN9OvKc1RUiyA', final: '1AD1HTgNm48uhErFcXxv_HSVlNN4O2gMH' },
+  { label: 'STL 01', rough: '1OheZVs2DyPRgYIQqxyCccHi6EpyKlcpL', clean: '1acZ3c361rV2JHRqpsRI_BF1Tjp1CxbKo', final: '1R_9vcI3_K3k3Aj5qz-W9zYLLdCEy-XhB' },
+];
+
+const STUDIES = [
+  ['1gf73YeExRJ2N-W00j8iQq-LB5OJR8y3U', 'Character cycle', 'Personal'],
+  ['1epppnESZEeG0yWSRV610OUN4la-iNCUY', 'Kawaii run', 'Run cycle'],
+  ['1EN_aS8qwEu3PicoYf1N5Ja3I8gQxEhNC', 'Bucky: front run', 'Run cycle'],
+  ['1klDSCTufK687RZdI_yGktdRCG5KKl0x-', 'Bucky: side run', 'Run cycle'],
+  ['1avQuagPpY6zHyc8tUGXjJ1yngXMO4vn3', 'Bucky: side walk', 'Walk cycle'],
+  ['1YqPagxoJFMgTNPmk6YtqC6tkCQ7PjML8', 'Sad walk', 'Walk cycle'],
+  ['1NjYM-58iU93SZmynhCJ7XKwtkIPeDuxi', 'Walk: rough', 'Walk cycle'],
+  ['1KNO44PPFoCjRpNc-FA-Ep6woYD8Is2I_', 'Night sky', 'Personal'],
+  ['1QXzr1cJvv_1HtwqHFT91l-CvvP_jxxKr', 'Karate Kid', 'Reference study'],
+  ['1S_no2bUM5rnYBCeTXXqDCglrpIHps0jz', 'Mr Bean', 'Acting study'],
+  ['1b26ToMW5YFieRqaG9poI0swczRaieVsn', 'Fight choreography', 'Action study'],
+  ['1wLOur8gEHrKxMQhgNBWLS2U2_7qjWG4a', 'Expression test', 'Acting study'],
+  ['1FQZ2SViJc1_F8ZFIFzfMMRrdNHUmIDhs', 'Figure pass', 'Rough'],
+  ['1tuXGeWFvVwFIh6S381Px2WiBqkdVs6Yi', 'Construction pass', 'Rough'],
+  ['1d6LXI0ZkQnuyIAZeFZILAxFLTfE7WEm7', 'Character turn', 'Personal'],
+];
+
+const ART = [
+  // illustration
+  ['1I68MdP2qW50tYmmFJg80ZvjCgCtxsrEx', 'illustration', 'Four friends'],
+  ['1iKRtqFAGWsmfe-mMIYuHNHl_wV8t9YSB', 'illustration', 'Undertow'],
+  ['1YcdKtSq2Fmlkvy-CDqQjvAdqXFPIg23x', 'illustration', 'Deep blue'],
+  ['1ySHjwxPxn7sHXB82Fvw4g1KBb8Z8WOhO', 'illustration', 'Blossom'],
+  ['1mlWu-LOHEeO4cMPJgYbE2tW4pzRkqerD', 'illustration', 'Golden hour'],
+  ['1YVFlG4ayQU_GOnycIUrFITpDp6t-N8x0', 'illustration', 'Neon'],
+  ['1dneZFqQXlxp06ei27yVcxmngAv-bP4Vx', 'illustration', 'Crimson'],
+  ['1glOB-FXXWLFJUAZSPfZ93A0cb5TjQjJh', 'illustration', 'Mermaid'],
+  ['1ibF2pOR953g-dpDYF_m5MkwB8Jp3ywru', 'illustration', 'Lavender'],
+  ['16iMmjxgLmcQLWSoqwloen8kOcapwJAk8', 'illustration', 'Wings'],
+  ['1WwUTdonJ1kBb60F57GLJ-OD0mGqR9Ojg', 'illustration', 'Fire and gold'],
+  ['1z3KZyj0ETFQQem9po47df8Ja4rFQ-da6', 'illustration', 'Wrench'],
+  ['17btgXe82FiptDfjztQsf5YyM40IH5-aP', 'illustration', 'Twins'],
+  ['1CohDqJ52pNG58uazk-5_qoP1rh_4BfUX', 'illustration', 'Night study'],
+  // character design
+  ['10ZbfEsGYQN66FLIgBW0vFM7LKj-K0fHF', 'character', 'Kid: design and construction'],
+  ['1koNelT-hJoRwb7rb0s-RYthuVPc8r7F6', 'character', 'Kid: design sheet'],
+  ['1iW6fjm3jh9CWI4uLTGSp8DpDD8SZRGwI', 'character', 'Turnaround'],
+  ['1JzwOIjbx9cSaW0lGidMgARnIfgbhOAjD', 'character', 'Expressions: male'],
+  ['1_2K02mKJgmS3HOd_EJ3oM_ZinWlgO0lN', 'character', 'Expressions: female'],
+  ['1h5V7T1ue-p2zFPsYMxnsIjpKo56ZSQe0', 'character', 'Expression sheet'],
+  ['1uf51VT5YnwWTCS7CdfMaBmfr89pdx7bv', 'character', 'Baby: model'],
+  ['1k2qN5SoU6PcOs80KNaBJ6OMqycl0hc7m', 'character', 'New kid'],
+  ['1v0kAXZ17n_0jGWB_SFQGtoE90q6OosbA', 'character', 'Kids: heads'],
+  ['1-yS51F4hGzDM9qWEMZEuftTdIgQsFXIb', 'character', 'Ink and flat'],
+  ['15DLghqcuN2gQlFYyFguUVU29do6k7QBT', 'character', 'Line to tone'],
+  // sketchbook
+  ['1CLDUjN-e0J3HxO3nvrbFWuyJ8NdZlXqP', 'sketch', 'Gestures'],
+  ['1tHTzrMyHwDgdCi7yTCKLm6w7uEUzl8oT', 'sketch', 'Jump: key poses'],
+  ['11ljruaKWku7SkTnPF9Kp8VJ3bst0pgvr', 'sketch', 'Pose study'],
+  ['1LpFD5unW8HVRwbIg6Id0WeYMYSTk6En0', 'sketch', 'Pose study'],
+  ['1TPBZGUY-bpQz2IaI_GkpXolPpdoXrqbz', 'sketch', 'Dynamic poses'],
+  ['1Gs6kfSCW_qIuNv9HrvnnGqHLYHYPitCW', 'sketch', 'Figure drawing'],
+  ['1idxC-fX68C7fpo1X6P0FcRt7Wcubh_hE', 'sketch', 'Figure drawing'],
+  ['1BFdcmbAWaAVjceMnnoTboBO1CxkOSQYN', 'sketch', 'Figure drawing'],
+  ['1CTo9S6fcx6f0VQXxzF0x3fQFypRcqwd5', 'sketch', 'Figure drawing'],
+  ['16a3oyAKqT_ZCUSqVsuvMQTyKnAVbcIUX', 'sketch', 'Story panel'],
+  ['1MT-llig3_OrmKBIgsUj563x6hgF01ycj', 'sketch', 'Character roughs'],
+  ['1pT1mA4AnCIPKUjccvaH_RKCOBBhlSjrk', 'sketch', 'Character roughs'],
+  ['1dH3WBn-JI-TrHff8K2XDrOT1zM97BQTv', 'sketch', 'Sketchbook'],
+];
+const ART_LABELS = { all: 'All', illustration: 'Illustration', character: 'Character design', sketch: 'Sketchbook' };
+
+/* ===================================================================== */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const GROUPS = {};
+const imgTag = (id, w, alt, extra = '') =>
+  `<img src="${thumb(id, w)}" alt="${esc(alt)}" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.closest('[data-lb]')?.classList.add('broken');this.remove()" ${extra}>`;
+
+/* ---------- loader ---------- */
+(() => {
+  const L = $('#loader');
+  let seen = false;
+  try { seen = sessionStorage.getItem('hh-seen') === '1'; } catch (e) {}
+  if (reduce || seen) { L.remove(); return; }
+  let f = 0; const c = $('#ldc');
+  const t = setInterval(() => { f = Math.min(24, f + 1); c.textContent = String(f).padStart(2, '0'); if (f === 24) clearInterval(t); }, 1300 / 24);
+  const done = () => { L.classList.add('done'); setTimeout(() => L.remove(), 900); try { sessionStorage.setItem('hh-seen', '1'); } catch (e) {} };
+  setTimeout(done, 1450);
+})();
+
+/* ---------- hero film strips ---------- */
+(() => {
+  const pick = [
+    ['1CHj_9XIzFCDTxVNRZ48zz5HnDczRBB7I', '1Pk6j-HhCr_dbqMUf4MC9H76XsmEMTnkA', '1-GWwkfDzDMsJpWmxnKsD9HW636tJgqcD', '1i11rNwu3SRwI-Qa6WgK6qVKmljVfN7CC', '1YvKZJVUoLjby_lFH0pRvpCs5XWX7nE1B', '1kQgh1Y_8XeE5JqBod1nsVSvH7TByJ6v1', '1W_1k7PmdQU6qL5Cg53K-hhL2z1Jz6sHq'],
+    ['11N6d-0MQVDcJ_V9FxZnp4A-P19eObKXP', '10dzIgSWtFYS880_HUxvtRoaaV7TPDrc3', '1oHkY8fawJQI0eb2Qui5yv-6M_IhaVCTu', '1MCiTrs26NoOyDPegik6gQR27ClNEK-aj', '1I7QXVGovwqZlNr1S6iXTtsyIcGmnaM4Q', '1ob9Ao0_4g140bbBb8i7Xk8G--lhdflQN', '1e_UHU3BNliWx8NWAwsCxmVOtoxk_txI8'],
+    ['1eSUJxg9rKSq2JN4hFk9lYS0P9M4XtFj0', '1Pavlv0ZfWJeqvz8yg6jmlJdJQDZstphN', '1_Z_YpqASlhIsv9Ug2Yi1ItfH0l_manJ5', '1cg4z7q9Y-TMINwk5z3e1xIHLNr97LGGq', '1oG7s3rAwu_98GYdmYVxza8urHdsRJNkV', '1-EkEQqy6FI0EBmskFqH0loTDPOOGc4Dt', '1DnkEN6-quVkY0HdskoaZ4CWhLpp-qMo2'],
+  ];
+  const host = $('#strips');
+  pick.forEach((row, i) => {
+    const imgs = row.map(id => `<img src="${thumb(id, 480)}" alt="" referrerpolicy="no-referrer" onerror="this.style.visibility='hidden'">`).join('');
+    host.insertAdjacentHTML('beforeend', `<div class="strip${i % 2 ? ' rev' : ''}" style="--dur:${80 + i * 18}s">${imgs}${imgs}</div>`);
+  });
+})();
+
+/* ---------- chapters ---------- */
+(() => {
+  const host = $('#chapters');
+  CHAPTERS.forEach(ch => {
+    GROUPS[ch.key] = ch.shots.map(([id, t, s]) => ({ id, type: 'video', title: t, sub: `${ch.title.replace(/[“”]/g, '')} · ${s}` }));
+    const shots = ch.shots.map(([id, t, s, feat], i) => `
+      <button class="shot${feat ? ' feat' : ''}" data-lb="${ch.key}" data-i="${i}" data-reveal style="--d:${Math.min(i, 8) * 0.05}s" aria-label="Play: ${esc(t)}">
+        <span class="img">${imgTag(id, feat ? 1200 : 640, t)}</span>
+        <span class="fr">${esc(s)}</span><span class="pl" aria-hidden="true"></span>
+        <span class="ov"><span class="t">${esc(t)}</span><span class="s">${esc(s)}</span></span>
+      </button>`).join('');
+    host.insertAdjacentHTML('beforeend', `
+      <article class="chapter" id="w-${ch.key}">
+        <div class="ch-info">
+          <div class="ch-no" data-n="${ch.n}">${ch.n}</div>
+          <h3>${ch.title}</h3>
+          <p class="ch-studio">${esc(ch.studio)}</p>
+          <p class="desc">${esc(ch.desc)}</p>
+          <dl class="facts mono">${ch.facts.map(([k, v]) => `<dt>${esc(k)}</dt><dd style="font-family:var(--body);letter-spacing:0;text-transform:none">${esc(v)}</dd>`).join('')}</dl>
+          <ul class="tags">${ch.tags.map(t => `<li>${esc(t)}</li>`).join('')}</ul>
+        </div>
+        <div class="shots">${shots}</div>
+      </article>`);
+  });
+})();
+
+/* ---------- studies ---------- */
+(() => {
+  GROUPS.studies = STUDIES.map(([id, t, s]) => ({ id, type: 'video', title: t, sub: s }));
+  $('#cycles').innerHTML = STUDIES.map(([id, t, s], i) => `
+    <button class="shot" data-lb="studies" data-i="${i}" data-reveal style="--d:${(i % 6) * 0.05}s" aria-label="Play: ${esc(t)}">
+      <span class="img">${imgTag(id, 480, t)}</span>
+      <span class="pl" aria-hidden="true"></span>
+      <span class="ov"><span class="t">${esc(t)}</span><span class="s">${esc(s)}</span></span>
+    </button>`).join('');
+})();
+
+/* ---------- art + filters ---------- */
+(() => {
+  const counts = ART.reduce((a, [, c]) => (a[c] = (a[c] || 0) + 1, a), { all: ART.length });
+  $('#filters').innerHTML = Object.entries(ART_LABELS).map(([k, v], i) =>
+    `<button data-f="${k}" aria-pressed="${i === 0}">${v}<span class="ct">${counts[k] || 0}</span></button>`).join('');
+  $('#masonry').innerHTML = ART.map(([id, c, t], i) => `
+    <button class="art" data-cat="${c}" data-lb="art" data-i="${i}" aria-label="View: ${esc(t)}">
+      ${imgTag(id, 700, t)}<span class="cap">${esc(t)}</span>
+    </button>`).join('');
+  const rebuild = f => {
+    const vis = $$('.art').filter(el => f === 'all' || el.dataset.cat === f);
+    $$('.art').forEach(el => el.classList.toggle('hide', !vis.includes(el)));
+    GROUPS.art = vis.map(el => { const [id, , t] = ART[+el.dataset.i]; return { id, type: 'image', title: t, sub: ART_LABELS[el.dataset.cat] }; });
+    vis.forEach((el, j) => el.dataset.j = j);
+  };
+  rebuild('all');
+  $('#filters').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    $$('#filters button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    rebuild(b.dataset.f);
+  });
+})();
+
+/* ---------- process compare ---------- */
+(() => {
+  const A = $('#cmpA'), B = $('#cmpB'), R = $('#cmpR'), box = $('#compare');
+  let cur = 0;
+  const set = v => box.style.setProperty('--x', v + '%');
+  const load = i => {
+    cur = i; const p = PROCESS[i];
+    A.src = thumb(p.rough, 1400); B.src = thumb(p.clean, 1400);
+    $$('#procTabs button').forEach((b, j) => b.setAttribute('aria-selected', j === i));
+    const fin = $('[data-proc="final"]'); fin.disabled = !p.final; fin.style.opacity = p.final ? 1 : .4;
+  };
+  $('#procTabs').innerHTML = PROCESS.map((p, i) => `<button role="tab" data-i="${i}">${esc(p.label)}</button>`).join('');
+  $('#procTabs').addEventListener('click', e => { const b = e.target.closest('button'); if (b) load(+b.dataset.i); });
+  R.addEventListener('input', () => set(R.value));
+  $$('[data-proc]').forEach(b => b.addEventListener('click', () => {
+    const p = PROCESS[cur], k = b.dataset.proc; if (!p[k]) return;
+    GROUPS.proc = [{ id: p[k], type: 'video', title: `${p.label}: ${k === 'clean' ? 'clean-up' : k}`, sub: 'Something to Lose · KBIR' }];
+    openLB('proc', 0);
+  }));
+  load(0); set(50);
+  // one-time sweep to show that it's draggable
+  if (!reduce) {
+    const io = new IntersectionObserver(([en]) => {
+      if (!en.isIntersecting) return; io.disconnect();
+      const t0 = performance.now(), D = 1800;
+      const tick = now => {
+        const k = Math.min(1, (now - t0) / D);
+        const v = 50 + Math.sin(k * Math.PI * 2) * 32 * (1 - k);
+        set(v); R.value = v; if (k < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }, { threshold: .6 });
+    io.observe(box);
+  }
+})();
+
+/* ---------- lightbox ---------- */
+const LB = $('#lb'); let lbG = null, lbI = 0, lastFocus = null;
+function renderLB() {
+  const it = GROUPS[lbG][lbI], M = $('#lbMedia');
+  M.className = 'lb-media' + (it.type === 'image' ? ' img' : '');
+  M.innerHTML = it.type === 'image'
+    ? `<img src="${thumb(it.id, 1800)}" alt="${esc(it.title)}" referrerpolicy="no-referrer">`
+    : `<div class="spinner">Loading clip…</div><iframe src="${media(it.id)}" allow="autoplay; fullscreen" allowfullscreen title="${esc(it.title)}"></iframe>`;
+  $('#lbTitle').textContent = it.title; $('#lbSub').textContent = it.sub || '';
+  const n = GROUPS[lbG].length;
+  $('#lbCount').textContent = `${String(lbI + 1).padStart(2, '0')} / ${String(n).padStart(2, '0')}`;
+  $('#lbPrev').hidden = $('#lbNext').hidden = n < 2;
+}
+function openLB(g, i) {
+  lbG = g; lbI = i; lastFocus = document.activeElement; renderLB();
+  LB.classList.add('open'); LB.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden';
+  $('#lbClose').focus();
+}
+function closeLB() {
+  LB.classList.remove('open'); LB.setAttribute('aria-hidden', 'true'); document.body.style.overflow = '';
+  setTimeout(() => { if (!LB.classList.contains('open')) $('#lbMedia').innerHTML = ''; }, 300);
+  lastFocus?.focus();
+}
+const step = d => { const n = GROUPS[lbG].length; lbI = (lbI + d + n) % n; renderLB(); };
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-lb]'); if (!t) return;
+  const g = t.dataset.lb; openLB(g, +(g === 'art' ? t.dataset.j : t.dataset.i));
+});
+$('#lbClose').onclick = closeLB; $('#lbPrev').onclick = () => step(-1); $('#lbNext').onclick = () => step(1);
+LB.addEventListener('click', e => { if (e.target === LB || e.target.classList.contains('lb-stage')) closeLB(); });
+document.addEventListener('keydown', e => {
+  if (!LB.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLB(); if (e.key === 'ArrowRight') step(1); if (e.key === 'ArrowLeft') step(-1);
+});
+
+/* ---------- reel ---------- */
+function playReel() {
+  const f = $('#reelFrame'); if (f.querySelector('iframe')) return;
+  f.innerHTML = `<iframe src="https://player.vimeo.com/video/1228117721?autoplay=1&title=0&byline=0&portrait=0&color=3FD1B4" title="Haritha Haridas: 2D Animation Showreel" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+}
+$('#reelPoster').addEventListener('click', playReel);
+$('#heroPlay').addEventListener('click', e => { e.preventDefault(); $('#reel').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); setTimeout(playReel, reduce ? 0 : 700); });
+
+/* ---------- split headings into words ---------- */
+$$('.split').forEach(el => {
+  let i = 0;
+  const walk = node => [...node.childNodes].forEach(n => {
+    if (n.nodeType === 3) {
+      const frag = document.createDocumentFragment();
+      n.textContent.split(/(\s+)/).forEach(w => {
+        if (!w) return;
+        if (/^\s+$/.test(w)) { frag.append(w); return; }
+        const s = document.createElement('span'); s.className = 'w';
+        s.innerHTML = `<span style="--i:${i++}">${esc(w)}</span>`; frag.append(s);
+      });
+      n.replaceWith(frag);
+    } else if (n.nodeType === 1) walk(n);
+  });
+  walk(el);
+});
+
+/* ---------- reveal on scroll ---------- */
+const rio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); rio.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: .08 });
+$$('[data-reveal], .split, .chapter').forEach(el => rio.observe(el));
+
+/* ---------- counters ---------- */
+const cio = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return; cio.unobserve(e.target);
+  const el = e.target, to = +el.dataset.count, dec = +(el.dataset.dec || 0), t0 = performance.now(), D = reduce ? 0 : 1400;
+  const suf = dec ? '' : '<sup>+</sup>';
+  const tick = now => {
+    const k = D ? Math.min(1, (now - t0) / D) : 1, v = to * (1 - Math.pow(1 - k, 3));
+    el.innerHTML = (dec ? v.toFixed(dec) : Math.round(v)) + (k === 1 && to >= 4 && !dec ? suf : '');
+    if (k < 1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+}), { threshold: .5 });
+$$('[data-count]').forEach(el => cio.observe(el));
+
+/* ---------- header, progress, timecode, active nav, timeline ---------- */
+(() => {
+  const H = $('#hdr'), P = $('#progress'), TC = $('#tc b'), TL = $('#timeline');
+  const links = $$('#nav a'), secs = links.map(a => $(a.getAttribute('href')));
+  const FPS = 24, TOTAL = 104 * FPS; // scroll maps onto the reel's runtime
+  let ticking = false;
+  const upd = () => {
+    ticking = false;
+    const y = scrollY, max = document.documentElement.scrollHeight - innerHeight, p = max > 0 ? y / max : 0;
+    H.classList.toggle('scrolled', y > 20);
+    P.style.transform = `scaleX(${p})`;
+    const f = Math.round(p * TOTAL), s = Math.floor(f / FPS);
+    TC.textContent = `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}:${String(f % FPS).padStart(2, '0')}`;
+    let act = -1; secs.forEach((s, i) => { if (s && s.getBoundingClientRect().top < innerHeight * .4) act = i; });
+    links.forEach((a, i) => a.classList.toggle('active', i === act));
+    const r = TL.getBoundingClientRect(), tp = Math.max(0, Math.min(1, (innerHeight * .7 - r.top) / r.height));
+    TL.style.setProperty('--tp', tp);
+  };
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }, { passive: true });
+  addEventListener('resize', upd); upd();
+
+  const M = $('#menu');
+  M.addEventListener('click', () => { const o = H.classList.toggle('open'); M.setAttribute('aria-expanded', o); });
+  links.forEach(a => a.addEventListener('click', () => { H.classList.remove('open'); M.setAttribute('aria-expanded', 'false'); }));
+})();
+
+/* ---------- theme ---------- */
+(() => {
+  const R = document.documentElement;
+  $('#theme').addEventListener('click', () => {
+    const t = R.dataset.theme === 'dark' ? 'light' : 'dark'; R.dataset.theme = t;
+    try { localStorage.setItem('hh-theme', t); } catch (e) {}
+  });
+})();
+
+/* ---------- contact bits ---------- */
+$('#copyMail').addEventListener('click', async e => {
+  const b = e.currentTarget;
+  try { await navigator.clipboard.writeText('haritha.hari4899@gmail.com'); b.textContent = 'Copied ✓'; }
+  catch (err) { b.textContent = 'haritha.hari4899@gmail.com'; }
+  setTimeout(() => b.textContent = 'Copy email', 2200);
+});
+(() => {
+  const words = ['Puppet animation', 'Classical', 'Key poses', 'Clean-up', 'Painted frames', 'Storyboards', 'Toon Boom Harmony', 'Adobe Animate'];
+  const h = words.map(w => `<span>${w}</span><span>✺</span>`).join('');
+  $('#mq').innerHTML = h + h;
+})();
+$('#yr').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>

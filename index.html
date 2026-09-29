@@ -623,7 +623,7 @@ section{position:relative; padding-block:clamp(72px,11vw,140px)}
       <div class="sec-head">
         <span class="sec-num">SC 02</span>
         <h2 class="split">Selected work</h2>
-        <p data-reveal>Shots from four productions, each with what I did on it. Click any frame to play it.</p>
+        <p data-reveal>Shots from five productions, each with what I did on it. Click any frame to play it.</p>
       </div>
       <div id="chapters"></div>
     </div>
@@ -731,17 +731,33 @@ section{position:relative; padding-block:clamp(72px,11vw,140px)}
         <div class="timeline" id="timeline">
           <div class="track"><i></i></div>
           <div class="job" data-reveal>
+            <span class="when mono">Sep 2026 — Present</span>
+            <h3>2D Clean-up and Colour Artist</h3>
+            <p class="org">Odd and Even Pictures LLP</p>
+            <p class="did">Clean-up and colouring in Clip Studio Paint. Cleans rough animation while
+            keeping the original acting, poses and movement, with consistent linework to the model
+            references. Picked up Clip Studio Paint as a new tool on the job.</p>
+          </div>
+          <div class="job" data-reveal>
+            <span class="when mono">Feb 2026 — Aug 2026</span>
+            <h3>2D Clean-up, Colour Artist and Animator</h3>
+            <p class="org">Eunoians Studio Pvt. Ltd. · Kochi</p>
+            <p class="did">Clean, consistent paintwork to model sheets, delivered to precise specs.
+            Layer organisation, clipping, alpha lock and selections for efficient colouring, with
+            production notes and corrections turned around quickly.</p>
+          </div>
+          <div class="job" data-reveal>
             <span class="when mono">Feb 2024 — Jan 2026</span>
-            <h3>2D Animation Assistant</h3>
-            <p class="org">ZVoid Studios · Kerala</p>
-            <p class="did">Puppet-based animation for the MSA YouTube series and the Naxon channel
-            (“Stories For Men”, “Artul”). Key poses and final animation in chibi, comic and anime styles,
-            built to the background artist's plates.</p>
+            <h3>2D Animator</h3>
+            <p class="org">ZVoid Studios Pvt. Ltd.</p>
+            <p class="did">Animated for the MSA YouTube series (previously My Story Animated) and the Naxon
+            channel (“Stories For Men”, “Artul”). Key poses and animation in chibi, comic and anime
+            styles in Blender (Grease Pencil), working closely with the background artist.</p>
           </div>
           <div class="job" data-reveal>
             <span class="when mono">Nov 2020 — Jan 2024</span>
             <h3>Junior Animator → Animator</h3>
-            <p class="org">Motion PhilmCGI · Maharashtra</p>
+            <p class="org">Motion PhilmCGI · Pune</p>
             <p class="did">Promoted from junior. Semi-realistic, puppet and classical animation on
             Lupin's Tale and KBIR's “Something to Lose”, plus storyboarding, character study and
             pre-production. Ran several projects in parallel to deadline.</p>
@@ -749,7 +765,7 @@ section{position:relative; padding-block:clamp(72px,11vw,140px)}
           <div class="job" data-reveal>
             <span class="when mono">Jun — Aug 2019</span>
             <h3>Prop &amp; Staging Intern</h3>
-            <p class="org">Phoebus Creation Media · Maharashtra</p>
+            <p class="org">Phoebus Creation Media Pvt. Ltd.</p>
             <p class="did">2D prop design for a series. Traced and coloured rough props from the animatic and sat in on storyboarding sessions.</p>
           </div>
         </div>
@@ -758,8 +774,8 @@ section{position:relative; padding-block:clamp(72px,11vw,140px)}
 
       <div class="mini-stats" data-reveal>
         <div class="stat"><b data-count="5">0</b><span class="mono">Years in studio</span></div>
-        <div class="stat"><b data-count="3">0</b><span class="mono">Studios</span></div>
-        <div class="stat"><b data-count="4">0</b><span class="mono">Productions</span></div>
+        <div class="stat"><b data-count="5">0</b><span class="mono">Studios</span></div>
+        <div class="stat"><b data-count="5">0</b><span class="mono">Productions</span></div>
         <div class="stat"><b data-count="9.32" data-dec="2">0</b><span class="mono">BSc CGPA</span></div>
       </div>
       <div class="ab-contact mono" data-reveal>
@@ -816,7 +832,31 @@ const media = id => `https://drive.google.com/file/d/${id}/preview`;
 
 const CHAPTERS = [
   {
-    key: 'painted', n: '01', title: 'Painted animation',
+    key: 'bgmi', n: '01', title: 'BGMI',
+    studio: 'Battlegrounds Mobile India',
+    desc: 'Action shots for BGMI: gunfights, vaults, vehicles and a bombing run. Each shot is shown finished first, followed by its rough, clean-up and colour passes.',
+    facts: [['Role', 'Rough, clean-up, colour'], ['Genre', 'Action / game'], ['Passes', 'Rough → clean-up → colour → final']],
+    tags: ['Action', 'Rough to final', 'Colour'],
+    shots: [
+      ['14LZXZmoxHuvHla5TauPC-946SQZISfs-', 'Taking aim: final', 'Final', true],
+      ['1SsrVSHJOSD01NPjP5-9NF9qEyt1DyJPo', 'Car roof: final', 'Final'],
+      ['1j3Qd_nJLNu1B92emINaCTtk9aOL4JA6N', 'Sign-off: final', 'Final'],
+      ['1t3x36ee2m8q3GRRGjeqUTS-hCfJJyoWO', 'Bombing', 'Final'],
+      ['1h9ISEBRq67pNl3BVo4VQ-hFQooA4T7UY', 'Getting shot', 'Final'],
+      ['18w4cOL0a-XTedhUOd8zZwJ_In1EvRK2a', 'Over the wall', 'Final'],
+      ['1TQcOr0mjtARDjtP8pgFpiUKYog9tkPUs', 'Car roof: colour', 'Colour'],
+      ['1qAriTqF7Dk1oPj647eF6krNcuDWlMGxK', 'Sign-off: clean-up', 'Clean-up'],
+      ['14xD9FaK2gnQEn3wdSNw2JPqqdhdVL5IT', 'Taking aim: rough', 'Rough'],
+      ['10tLg_r-cAvHWYI91QVA4bsR-61mHtUTQ', 'Taking aim: second character, rough', 'Rough'],
+      ['1rZJSyEWSYBRCodH3vvGLclMs9_lt-Yql', 'Car roof: rough', 'Rough'],
+      ['1bvVYrgzHoqaEr2VIluCjQERzFMunjjex', 'Sign-off: rough', 'Rough'],
+      ['1YsgO6bWXv_az8cBR0muv9rwsA7nKb-wm', 'Bombing: rough 1', 'Rough'],
+      ['1Jj9Bn7zy3KQ2aUTTzu72XyldYvGLGzPZ', 'Bombing: rough 2', 'Rough'],
+      ['1mUfwG5xhdSrPW35N_SMefFeLJH--Tmqj', 'Bombing: rough 3', 'Rough'],
+    ]
+  },
+  {
+    key: 'painted', n: '02', title: 'Painted animation',
     studio: 'Frame-by-frame in Photoshop',
     desc: 'Hand-painted animation with cinematic lighting: water, silhouettes, dusk skies and title concepts. Each frame is painted, with no rig.',
     facts: [['Role', 'Animation, painting, correction passes'], ['Tool', 'Adobe Photoshop'], ['Style', 'Painterly, cinematic']],
@@ -836,7 +876,7 @@ const CHAPTERS = [
     ]
   },
   {
-    key: 'msa', n: '02', title: 'MSA',
+    key: 'msa', n: '03', title: 'MSA',
     studio: 'ZVoid Studios · 2024–2026',
     desc: 'An animated YouTube series with an anime and comic look. I did puppet-based character animation, key poses and finals, built to the background artist\'s plates.',
     facts: [['Role', 'Key poses, final animation'], ['Tools', 'Blender, Adobe Animate'], ['Format', 'YouTube series']],
@@ -858,7 +898,7 @@ const CHAPTERS = [
     ]
   },
   {
-    key: 'lupin', n: '03', title: "Lupin's Tale",
+    key: 'lupin', n: '04', title: "Lupin's Tale",
     studio: 'Motion PhilmCGI · 2020–2024',
     desc: 'A bright children\'s YouTube series. I animated characters across several episodes, handling broad, readable acting and prop interaction in a jungle world.',
     facts: [['Role', 'Character animation'], ['Tools', 'Toon Boom Harmony, Animate'], ['Format', 'YouTube series']],
@@ -876,13 +916,14 @@ const CHAPTERS = [
     ]
   },
   {
-    key: 'kbir', n: '04', title: '“Something to Lose”',
+    key: 'kbir', n: '05', title: '“Something to Lose”',
     studio: 'KBIR music video · Motion PhilmCGI',
     desc: 'An animated music video. I took shots from rough through clean-up and did pre-production on the character. The full process is shown in the next section.',
     facts: [['Role', 'Rough, clean-up, pre-production'], ['Format', 'Music video'], ['Artist', 'KBIR']],
     tags: ['Classical', 'Clean-up', 'Pre-production'],
     shots: [
-      ['1W_1k7PmdQU6qL5Cg53K-hhL2z1Jz6sHq', 'Cigar: final', 'STL 10', true],
+      ['1Zz9IPNYscM9JIgc4I75PA3YxQi4DzNz8', 'All transitions', 'Sequence', true],
+      ['1W_1k7PmdQU6qL5Cg53K-hhL2z1Jz6sHq', 'Cigar: final', 'STL 10'],
       ['1R_9vcI3_K3k3Aj5qz-W9zYLLdCEy-XhB', 'Vinyl open', 'STL 01'],
       ['1AD1HTgNm48uhErFcXxv_HSVlNN4O2gMH', 'Screens', 'STL 08–10'],
       ['1u7a9wwFKA7JqSbqzlMSQdqCgh5py03ZU', 'Character rough', 'Rough'],
@@ -898,6 +939,9 @@ const PROCESS = [
 ];
 
 const STUDIES = [
+  ['1JvJXhaCENEAcuKLhW4_na9Mv1SVXpYXj', 'Dance', 'Personal'],
+  ['1KqpErWZBIMph14K4j0e1Kkg7fk0nl6bI', 'Action', 'Personal'],
+  ['1Z0PBuDjIrN5v_PFPC3YzvuQy3PCp0JF3', 'Walk cycle', 'Walk cycle'],
   ['1gf73YeExRJ2N-W00j8iQq-LB5OJR8y3U', 'Character cycle', 'Personal'],
   ['1epppnESZEeG0yWSRV610OUN4la-iNCUY', 'Kawaii run', 'Run cycle'],
   ['1EN_aS8qwEu3PicoYf1N5Ja3I8gQxEhNC', 'Bucky: front run', 'Run cycle'],

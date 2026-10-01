@@ -132,6 +132,7 @@ button{font:inherit; color:inherit; cursor:pointer}
 .btn.key:hover{background:var(--accent); border-color:var(--accent); color:#06120F}
 .btn.sm{padding:8px 14px; font-size:11px}
 .menu-btn{display:none}
+@media (min-width:901px){ .nav a.nav-contact{display:none} }
 .progress{position:absolute; left:0; bottom:-1px; height:2px; width:100%; background:var(--warm); transform-origin:left; transform:scaleX(0)}
 @media (max-width:1060px){ .tc{display:none} }
 @media (max-width:900px){
@@ -546,7 +547,7 @@ section{position:relative; padding-block:clamp(72px,11vw,140px)}
       <a href="#studies">Studies</a>
       <a href="#art">Art</a>
       <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="#contact" class="nav-contact">Contact</a>
     </nav>
     <div class="hdr-tools">
       <span class="tc mono" id="tc" title="Scroll timecode at 24fps">TC <b>00:00:00</b></span>
@@ -835,7 +836,7 @@ const CHAPTERS = [
     key: 'bgmi', n: '01', title: 'BGMI',
     studio: 'Battlegrounds Mobile India',
     desc: 'Action shots for BGMI: gunfights, vaults, vehicles and a bombing run. Each shot is shown finished first, followed by its rough, clean-up and colour passes.',
-    facts: [['Role', 'Rough, clean-up, colour'], ['Genre', 'Action / game'], ['Passes', 'Rough → clean-up → colour → final']],
+    facts: [['Role', 'Rough, clean-up, colour'], ['Tool', 'Toon Boom Harmony'], ['Genre', 'Action / game'], ['Passes', 'Rough → clean-up → colour → final']],
     tags: ['Action', 'Rough to final', 'Colour'],
     shots: [
       ['14LZXZmoxHuvHla5TauPC-946SQZISfs-', 'Taking aim: final', 'Final', true],
